@@ -1,0 +1,17 @@
+License Agreement
+Please read the following terms and conditions carefully before using SmoothVideo Project ver.4 for Linux ("SVP 4 Linux"). Use of this software indicates you accept the terms of this license agreement and warranty.
+
+License
+SVP 4 Linux is free only for personal use. You are granted the right to use and to make an unlimited number of copies of this software. You are allowed to use this program strictly for your personal and non-commercial purposes only.
+
+Restrictions on Use
+SVP 4 Linux must not be decompiled, disassembled, reverse engineered or otherwise modified.
+
+Disclaimer of Warranty
+SVP 4 Linux is provided "as-is" and without warranty of any kind, express, implied or otherwise, including without limitation, any warranty of merchantability or fitness for a particular purpose.
+In no event shall the author of this software be held liable for data loss, damages, loss of profits or any other kind of loss while using or misusing this software.
+
+Use of SVP 4 Linux and open-source software
+SVP 4 Linux may include software components that are licensed (or sub-licensed) to the licensee under free software licenses or other types of licenses. The texts with the corresponding conditions are available to the licensee in the product installation directory.
+
+Copyright (C) 2020 SVP-Team.com. All rights reserved

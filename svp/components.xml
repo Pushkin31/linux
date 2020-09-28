@@ -1,0 +1,213 @@
+<Packages>
+    <ApplicationName>SVP 4 Linux</ApplicationName>
+    <ApplicationVersion>1.0.0</ApplicationVersion>
+    <Package>
+        <Name>core</Name>
+        <Title>SVP Manager</Title>
+        <Description>SVP 4 Linux - SmoothVideo Project - (64-bit)</Description>
+        <Version>4.2.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>0</Size>
+        <Dependencies>core.i18n,core.flow,core.utils,core.manual,core.maintenance,core.full</Dependencies>
+        <ForcedInstallation>true</ForcedInstallation>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.flow</Name>
+        <Title>Frame interpolation engine</Title>
+        <Description>SVP core libraries (SVPflow)</Description>
+        <Version>4.3.0.192</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>965382</Size>
+        <ForcedInstallation>true</ForcedInstallation>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.full</Name>
+        <Title>SVP Manager</Title>
+        <Description>SVP Manager application</Description>
+        <Version>4.3.0.191</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>11511966</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.i18n</Name>
+        <Title>Language files</Title>
+        <Description>SVP 4 UI translation files</Description>
+        <Version>127-4</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>818726</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.maintenance</Name>
+        <Title>SVP Maintenance Tool</Title>
+        <Description>SVP Maintenance Tool</Description>
+        <Version>1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>0</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.manual</Name>
+        <Title>User manual</Title>
+        <Description>SVP 4 User Manual</Description>
+        <Version>2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>13586693</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.utils</Name>
+        <Title>Additional utilities</Title>
+        <Description>Additional utilities - clinfo, etc</Description>
+        <Version>1.0.3-1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>99603</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>core.vlc</Name>
+        <Title>VLC support 64-bit</Title>
+        <Description>A VLC video filter to enable SVP support</Description>
+        <Version>1.0.0.182</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>93000</Size>
+        <Dependencies>core.flow</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>deps.pythonqt</Name>
+        <Title>PythonQt</Title>
+        <Description>Dynamic Python binding for Qt Applications</Description>
+        <Version>3.2-503</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>3645664</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext</Name>
+        <Title>SVP extensions</Title>
+        <Description>SVP 4 Pro extensions</Description>
+        <Version>1.0.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>0</Size>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.cast</Name>
+        <Title>SVPcast</Title>
+        <Description>Stream with SVP to Chromecast, Apple TV  and mobile devices</Description>
+        <Version>1.1.0.191</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>2620550</Size>
+        <Dependencies>ext.cast.i18n</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.cast.i18n</Name>
+        <Title>SVPcast Language files</Title>
+        <Description>SVPcast UI translation files</Description>
+        <Version>127-1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>33027</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.code</Name>
+        <Title>SVPcode</Title>
+        <Description>A simple video transcoder based on ffmpeg</Description>
+        <Version>1.1.0.190</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>461824</Size>
+        <Dependencies>ext.code.i18n</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.code.i18n</Name>
+        <Title>SVPcode Language files</Title>
+        <Description>SVPcode UI translation files</Description>
+        <Version>127-2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>52819</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.light</Name>
+        <Title>SVPlight</Title>
+        <Description>LED lighting hardware controller</Description>
+        <Version>2.0.0.190</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>591664</Size>
+        <Dependencies>ext.light.i18n</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.light.i18n</Name>
+        <Title>SVPlight Language files</Title>
+        <Description>SVPlight UI translation files</Description>
+        <Version>125</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>51238</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.tube</Name>
+        <Title>SVPtube 2</Title>
+        <Description>Online videos extractor (using youtube_dl engine)</Description>
+        <Version>2.1.0.191</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>520392</Size>
+        <Dependencies>ext.tube.ydl,ext.tube.i18n,deps.pythonqt</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.tube.i18n</Name>
+        <Title>SVPtube Language files</Title>
+        <Description>SVPtube UI translation files</Description>
+        <Version>127</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>70071</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>ext.tube.ydl</Name>
+        <Title>youtube_dl</Title>
+        <Description>A Python program to download videos from YouTube.com and a few more sites.</Description>
+        <Version>2020.06.06</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2020-07-27</InstallDate>
+        <Size>5026854</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+</Packages>

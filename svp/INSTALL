@@ -1,0 +1,179 @@
+********************
+Read the full and up-to-date version there:
+https://www.svp-team.com/wiki/SVP:Linux
+********************
+
+
+Recommended Linux version: Ubuntu >= 18.04 64-bit
+
+
+Pre-requirements
+====================
+Despite of the Linux distro in use you'll need to pre-install:
+
+1. Qt >= 5.9
+2. Vapoursynth >= R31
+3. MediaInfo
+4. lsof command line tool (install it via your package manager)
+5. Required for SVPtube: Python 3.8
+6. (recommended) Proprietary video drivers including OpenCL ICD
+7. (recommended) mpv >= 0.28 built with Vapoursynth support
+8. (optional) Recommended UI for mpv: SMPLayer
+9. (optional) VLC 3.0 or later (NOT a Snap version)
+
+
+In case of Ubuntu
+=====================
+
+== Ubuntu 16.04+ specific ==
+
+# Ubuntu 16.04 - Qt5Concurrent package is not installed by default!
+sudo apt-get install libqt5concurrent5 libqt5svg5 libqt5qml5
+
+# Python 3.8 - needed for SVPtube
+# Ubuntu 18.04 have it in the "updates" repo
+add-apt-repository ppa:deadsnakes/ppa
+apt-get update
+
+apt-get install libpython3.8
+
+== Common packages ==
+
+# mediainfo
+sudo apt-get install mediainfo
+
+!!!!!
+mpv and Vapoursynth: build them on your own!
+djcj's PPA is missing since 18-Apr-2019, see mpv building instructions below!
+!!!!!
+
+# SMPlayer:
+
+sudo add-apt-repository ppa:rvm/smplayer 
+sudo apt-get update 
+sudo apt-get install smplayer smplayer-themes smplayer-skins
+
+# VLC
+
+sudo apt-get install vlc
+
+
+In case of Arch
+=====================
+# common packages
+pacman -S qt5-base qt5-declarative qt5-svg libmediainfo lsof vapoursynth
+
+# mpv with Vapoursynth support
+# AUR packages to install: rsound spirv-cross mpv-full
+
+# svpcode
+pacman -S mkvtoolnix-cli
+
+# if you want svpcast to be able to discover AppleTVs
+pacman -S avahi
+systemctl enable avahi-daemon.service
+
+
+mpv configuration
+=====================
+Just add "--input-ipc-server=/tmp/mpvsocket" to mpv args (or config file) and SVP should find it.
+Alternatively you can "open" video file via SVPManager - it'll execute mpv with the correct argument.
+
+As Vapoursynth processing requires a "copy-back" video decoder, you have to also include
+--hwdec=audo-copy
+
+More info: 
+- https://www.svp-team.com/wiki/SVP:mpv
+- https://www.svp-team.com/wiki/SVP:SMPlayer
+
+
+VLC configuration
+=====================
+As of now SVP assumes that VLC installed into /usr/bin, /usr/lib etc.
+
+SVP's plugin for VLC replaces the "deinterlace" filter. To be able to quickly switch them from SVP's main menu 
+you may need to change VLC's plugins folder access rights:
+
+chmod -R a+W /usr/lib/vlc/plugins/video_filter
+
+Then "install" or "uninstall" SVP's plugin via SVP main menu -> Utilities -> SVP in VLC.
+If it doesn't work then manually put the plugins path (e.g. "/usr/lib/vlc/plugins") into main.setup.vlc.plugins property in SVP's All settings.
+
+You must turn on deinterlace in VLC via Video -> Deinterlace -> On to start using SVP's plugin.
+Alternatively you can turn it on permanently: Tools -> Preferences -> Video -> Deinterlacing = On
+
+Note: Hardware decoding may not be compatible with the Vapoursynth filter!
+
+
+Building 3rd-party apps from sources
+====================================
+The following tested on Ubuntu 19.04 right after the clean installation.
+
+1. Vapoursynth
+
+# common build tools
+sudo apt-get install autoconf automake libtool pkg-config nasm git
+
+# zimg library
+git clone https://github.com/sekrit-twc/zimg.git
+cd zimg   
+./autogen.sh
+./configure
+make -j4
+sudo make install
+
+cd ..
+
+# Cython for Python3
+sudo apt-get install cython3
+
+# build Vapoursynth!
+git clone https://github.com/vapoursynth/vapoursynth.git
+cd vapoursynth
+./autogen.sh
+./configure
+make -j4
+sudo make install
+cd ..
+
+sudo ldconfig
+
+2. mpv with Vapoursynth support
+
+# install dependencies: add more if you want additional ffmpeg/mpv codecs and features
+sudo apt-get install python-minimal libssl-dev libfribidi-dev libluajit-5.1-dev libx264-dev xorg-dev libegl1-mesa-dev 
+# you need at least one of these to enable audio output
+sudo apt-get install libasound2-dev libpulse-dev
+
+git clone https://github.com/mpv-player/mpv-build.git
+cd mpv-build
+
+# minimal install, feel free to add more options to ffmpeg_options and mpv_options
+echo --enable-libx264 >> ffmpeg_options
+echo --enable-vapoursynth >> mpv_options
+echo --enable-libmpv-shared >> mpv_options
+./rebuild -j4
+sudo ./install
+cd ..
+
+Issues
+=====================
+One major issue is incompatibility between the way system tray icon/menu implemented in Qt now and some display managers.
+For example in Xubuntu 15.10/Xfce tray icon is completely unusable. 
+Because of this SVP runs w/o tray icon by default, BUT it's possible to switch Windows behaivor with "-tray" command line arg.
+
+For GPU acceleration support use proprietary video drivers with (probably) some additional modules - search for "OpenCL ICD".
+For example in case of NV cards "nvidia-modprobe" package is needed for OpenCL to work.
+Check the installation with utils/clinfo.
+
+"Auto" settings expect hardware video decoding which may be unavailable for mpv with Vapoursynth video filter enabled. 
+So you may need to lower SVP settings manually.
+
+Unlike the Windows version, SVP 4 Linux doesn't measure actual screen refresh rate, but uses OS provided value instead. 
+For 59.xxx Hz screens this value is often rounded to "59.0", so you'll get sub-optimal FRC rate like 25/11 instead of 5/2. 
+To avoid this use fixed "Movie x2.5" target rate.
+
+Fix for the following error:
+/usr/bin/mpv: symbol lookup error: /usr/bin/mpv: undefined symbol: ass_set_check_readorder
+is
+apt-get install libass5

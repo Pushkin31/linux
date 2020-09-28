@@ -1,0 +1,4 @@
+https://github.com/Oblomov/clinfo
+
+The code is released in the public domain, but you are encouraged to
+share any changes you make.

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SVPcast - media file picker</title>
+	<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+	<script src="jquery.min.js"></script>
+	<script src="jquery.mobile-1.4.5.min.js"></script>
+	<script src="svpcast.js"></script>
+</head>
+<body>
+<div data-role="page" id="svpcast">
+
+	<div data-role="header">
+		<h1 style="margin:0px 5px 0px 80px">SVPcast</h1>
+		<h4 id="header" style="font-weight:300;margin:0px 5px 0px 80px"></h4>
+		<img src="images/logo.png" height="90%" style="position:absolute;left:5px;top:5px;">
+		<img id="qr-code" src="qr.png?tmp=1" height="100%" style="position:absolute;right:0px;top:0px;">
+	</div><!-- /header -->
+
+	<div id="page-files" class="ui-content">	
+        	<ul data-role="listview" data-autodividers="false" data-filter="true" id="files-list">
+	        </ul><!-- /listview -->
+	</div>
+
+	<div id="page-tracks" class="ui-content">
+		<select id="device"></select>
+        <select id="audio"></select>
+        <select id="subs"></select>
+        <select id="profile"></select>
+		<a href="#" id="btn-start" class="ui-btn ui-shadow ui-corner-all ui-icon-action ui-btn-icon-right ui-btn-b">Stream!</a>
+		<a href="#" id="btn-cancel" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-right ui-btn-b">Cancel</a>
+	</div>
+
+	<div id="page-streaming" class="ui-content">
+
+	<div class="ui-corner-all ui-shadow custom-corners">
+		<div class="ui-bar ui-bar-a">
+			<h3 id="lbl-conversion"></h3>
+		</div>
+		<div class="ui-body ui-body-a">
+			<p><span id="lbl-current"></span><span id="lbl-total" style="position:absolute;right:15px;"></span></p>
+			<input type="range" name="slider-progress" id="slider-progress" data-highlight="true" min="0" max="100">
+		</div>
+	</div>
+	         <br>
+	<div class="ui-corner-all ui-shadow custom-corners" id="chromecast">
+		<div class="ui-bar ui-bar-a">
+			<h3 id="lbl-device">Chromecast</h3>
+		</div>
+        <div class="ui-body ui-body-a">
+			<a href="#" id="btn-pause" class="ui-btn ui-shadow ui-corner-all ui-icon-power ui-btn-icon-left">Pause</a>
+            <div id="volume-ctrl">
+                <a href="#" id="btn-mute" class="ui-btn ui-shadow ui-corner-all ui-icon-audio ui-btn-icon-left">Mute</a>
+                <input type="range" id="slider-volume" data-highlight="true" min="0" max="100">
+            </div>
+		</div>
+	</div>
+	<div class="ui-corner-all ui-shadow custom-corners" id="m3u8">
+		<div class="ui-bar ui-bar-a">
+			<h3>HTTP live stream</h3>
+		</div>
+		<div class="ui-body ui-body-a">
+			<i><a href="#" id="url-m3u8" target="_blank">URL</a></i>
+		</div>
+	</div>
+		<br>
+		<a href="#" id="btn-stop" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-right ui-btn-b">Cancel</a>
+	</div>
+
+	<div data-role="footer" align="center">
+		<a href="https://www.svp-team.com/wiki/Manual:SVPcast">SVPcast on SVP-Team.com</a>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+# This file controls Qt's UI scaling factor
+# More info on this: http://doc.qt.io/qt-5/highdpi.html
+
+# 0 or any non-numeric value or nothing = "auto"
+# 1 = disable UI scaling (x1)
+# 1.5 = x1.5
+# 2 = x2
+# ...and so on
+
+1
