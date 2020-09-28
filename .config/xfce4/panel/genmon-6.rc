@@ -1,0 +1,6 @@
+Command=spotify
+UseLabel=1
+Text=(genmon)
+UpdatePeriod=5000
+Font=Clear Sans Medium, Medium 10
+

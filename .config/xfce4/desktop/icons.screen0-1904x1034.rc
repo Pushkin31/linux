@@ -1,9 +1,13 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/mxn/Рабочий стол/Full.tint2rc]
-row=1
-col=0
+[/home/mxn/Рабочий стол/акк али кулон]
+row=0
+col=3
+
+[/home/mxn/Рабочий стол/акк бт адаптера]
+row=0
+col=2
 
 [/home/mxn/Рабочий стол/Всё]
 row=0

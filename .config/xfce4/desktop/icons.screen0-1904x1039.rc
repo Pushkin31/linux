@@ -1,31 +1,15 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/mxn/Рабочий стол/Полезные сочетания клавиш KDE]
-row=1
-col=0
-
-[/home/mxn/Рабочий стол/монтирование]
-row=0
-col=2
-
-[/home/mxn/Рабочий стол/мак.layout.latte]
-row=0
-col=1
-
 [/home/mxn/Рабочий стол/Всё]
 row=0
 col=0
 
-[/home/mxn/Рабочий стол/ydisk.sh]
-row=3
+[/home/mxn/Рабочий стол/text]
+row=1
 col=0
 
-[/home/mxn/Рабочий стол/комбо]
+[/home/mxn/Рабочий стол/2020-07-23_22-12.png]
 row=2
 col=0
-
-[/home/mxn/Рабочий стол/стримы.sh]
-row=1
-col=1
 

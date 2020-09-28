@@ -26,7 +26,7 @@ MiscSlimTabs=FALSE
 TitleInitial=term
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ColorForeground=#f8f8f8f8f2f2
-BackgroundDarkness=0,950000
+BackgroundDarkness=0,750000
 FontName=Hack Nerd Font Mono 9
 ColorCursor=#fdfdfdfdfdfd
 ColorBackground=#111111111313
@@ -40,4 +40,6 @@ DropdownOpacity=95
 DropdownToggleFocus=FALSE
 MiscShowRelaunchDialog=TRUE
 MiscNewTabAdjacent=FALSE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
 
