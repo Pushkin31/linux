@@ -130,4 +130,3 @@ ${voffset 4}${font Ubuntu:size=14}${if_up wlp0s19f2u1}IP : ${addr wlp0s19f2u1} $
 
 
 ]];
-

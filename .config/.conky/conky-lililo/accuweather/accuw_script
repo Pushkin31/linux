@@ -213,7 +213,7 @@ test_image_night () {
 killall wget
 
 #put your Accuweather address here
-address="http://www.accuweather.com/pt/pt/doze-ribeiras/865388/weather-forecast/865388"
+address="https://www.accuweather.com/pt/ru/voronezh/296543/weather-forecast/296543"
 
 loc_id=$(echo $address|sed 's/\/weather-forecast.*$//'|sed 's/^.*\///')
 last_number=$(echo $address|sed 's/^.*\///')
