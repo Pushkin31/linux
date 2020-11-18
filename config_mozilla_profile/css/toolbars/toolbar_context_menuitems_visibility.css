@@ -1,0 +1,84 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+/* toolbar context menuitem visibility **********/
+/* remove / and * after description to enable ***/
+/* add / and * after description to disable *****/
+
+/* all toolbars share one context menu, but show different items */
+
+/* скрыть пункт меню "Закрепить в дополнительном меню" */ /*
+#toolbar-context-menu .customize-context-moveToPanel {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Удалить с панели инструментов" */ /*
+#toolbar-context-menu .customize-context-removeFromToolbar {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Обновить все вкладки" */ /*
+#toolbar-context-menu #toolbar-context-reloadAllTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закладки Все вкладки" */ /*
+#toolbar-context-menu #toolbar-context-bookmarkAllTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Отменить закрытие вкладки" */ /*
+#toolbar-context-menu #toolbar-context-undoCloseTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть разделитель после пункта меню "Отменить закрытие вкладки" */ /*
+#toolbar-context-menu #toolbar-context-undoCloseTab + menuseparator {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/*скрыть пункт меню "Обновить выбранную вкладку" */ /*
+#toolbar-context-menu #toolbar-context-reloadSelectedTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закладки на выбранной вкладке" */ /*
+#toolbar-context-menu #toolbar-context-bookmarkSelectedTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Выбрать все вкладки" */ /*
+#toolbar-context-menu #toolbar-context-selectAllTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Управление расширением" */ /*
+#toolbar-context-menu .customize-context-manageExtension {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Удалить расширение" */ /*
+#toolbar-context-menu .customize-context-removeExtension {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть разделитель после пункта меню "Удалить расширение" */ /*
+#toolbar-context-menu .customize-context-removeExtension + menuseparator {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/**/
