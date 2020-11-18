@@ -1,0 +1,716 @@
+/* Firefox Quantum userChrome.css tweaks ********************************************************/
+/* код в основном взят из надстроек 'Classic Theme Restorer' и 'Classic Toolbar Buttons'**********/
+/* Github: https://github.com/aris-t2/customcssforfx ********************************************/
+/************************************************************************************************/
+
+/************************************************************************************************/
+/* Пользовательский CSS для Firefox 60+ (предварительно настроен для Firefox 82+) **********************************/
+/* version 3.1.7 ********************************************************************************/
+/************************************************************************************************/
+
+/*************************************************************************************************
+
+ Полный список изменений каждой версии: https://github.com/Aris-t2/CustomCSSforFx/commits/
+  
+ [!] Firefox 69+ требует, чтобы эта настройка была включена, иначе пользовательские стили не будут загружены:
+'about: config> toolkit.legacyUserProfileCustomizations.stylesheets> true'
+
+*************************************************************************************************/
+
+/*************************************************************************************************
+
+  README
+  
+  Поиск папки профиля: адресная строка > about:support > Папка профиля > Открыть папку
+  CSS файлы и подпапки лежат \PROFILEFOLDER\chrome\ каталоге.
+  \chrome\config\
+  \chrome\css\
+  \chrome\image\
+  \chrome\userChrome.css
+  \chrome\userContent.css
+
+  ВКЛЮЧЕНИЕ параметров: удалите комбинацию / и * перед '@import'
+  Параметры ОТКЛЮЧЕНИЯ: добавьте комбинацию / и * перед '@import'
+
+  ОШИБКИ FIREFOX (CSS-код ничего не может поделать):
+  - некоторые моды @import могут некорректно работать в macOS и Linux
+  - некоторые моды @import могут работать некорректно, если многопроцессорный режим (e10s) отключен
+  - в обоих случаях CSS-код необходимо добавить в файл userChrome.css вручную
+
+  Проблемы / сбои / исправления macOS -> ищите дополнения 'macOS fix' внутри этого файла
+  - вкладки на панели инструментов в категории 'панели инструментов'
+  - вкладки не в верхнем режиме в категории "положение панели инструментов вкладок"
+  - элементы контекста страницы в категории 'общий интерфейс'
+
+  Некоторые настройки CSS не будут работать, если в файлах .css используются ссылки @namespace!
+
+  ЭКСПЕРИМЕНТАЛЬНЫЕ настройки предназначены только для тестирования!
+  
+  ГЛОБАЛЬНАЯ ПОДДЕРЖКА: github.com/Aris-t2/CustomCSSforFx/issues/211
+
+  Все параметры имеют значимые категории и названия.
+  
+  ОСНОВНОЕ НАСТРОЙКИ:
+
+  КОНФИГУРАЦИОННЫЕ ФАЙЛЫ
+  КНОПКИ ПАНЕЛИ ИНСТРУМЕНТОВ
+  ВКЛАДКИ
+  ОБЩИЙ ПОЛЬЗОВАТЕЛЬСКИЙ ИНТЕРФЕЙС
+  ИНСТРУМЕНТЫ
+  АДРЕСНАЯ СТРОКА / строка поиска / рекомендации
+
+
+*************************************************************************************************/
+
+/************************************************************************************************/
+/* КОНФИГУРАЦИОННЫЕ ФАЙЛЫ - РЕДАКТИРОВАНИЕ ЦЕЛЕВЫХ ФАЙЛОВ ДЛЯ ИЗМЕНЕНИЯ ОБЩИХ ЗНАЧЕНИЙ *****************************/
+/************************************************************************************************/
+
+/* ОБЩИЕ ПЕРЕМЕННЫЕ ****************************************************************************/
+/* [!] установите глобальные переменные для параметров размера шрифта и вкладки и многое другое внутри целевого файла ***********/
+@import "./config/general_variables.css"; /**/
+
+/* ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ ТОЛЬКО ДЛЯ ТЕМЫ БРАУЗЕРА ПО УМОЛЧАНИЮ - ГЛАВНЫЙ ИНТЕРФЕЙС - [использовать только одно] ********* */
+/* [!] установить собственные цвета для вкладок и панелей инструментов в 'color_variables.css' или используйте доступные пресеты */
+/* [!] 'about:config > ui.systemUsesDarkTheme > 0' в некоторых случаях может потребоваться **************/
+/* [!] enabled 'menubar_color.css' and 'statusbar_color.css' в некоторых случаях может потребоваться ****/
+/* @import "./config/color_variables.css"; /**/  /* <- "серые" цвета по умолчанию */
+/* @import "./config/color_variables_aero.css"; /**/  /* <- 'AeroBlue' colors (Win 7 Aero) */
+/* @import "./config/color_variables_classic-grey.css"; /**/  /* <- 'классические серые цвета (Win Classic) */
+/* @import "./config/color_variables_fx3.css"; /**/  /* <- 'Голубоватые цвета в стиле Firefox 3 */
+/* @import "./config/color_variables_transparent.css"; /**/  /* <- (полу-) «прозрачные» цвета */
+/* @import "./config/color_variables_aeroglass.css"; /**/  /* <- 'AeroGlass' colors / Win10+Glass8 исправление в области "панелей инструментов" */
+/* @import "./config/color_variables_deved.css"; /**/  /* <- на основе цветов Developer Edition */
+/* @import "./config/color_variables_noia4_grey.css"; /**/  /* <- на основе серых тонов Noia 4 themes */
+/* @import "./config/color_variables_noia4_lightgrey.css"; /**/  /* <- на основе светло-серых цветов 'Noia 4 themes' */
+/* @import "./config/color_variables_noia4_dark.css"; /**/  /* <- на основе темных цветов Noia 4 themes */
+
+/*Темная "темная" тема по умолчанию - [использовать только одно] ***************************************/
+/* @import "./css/toolbars/default_dark_theme_darker.css";  */
+/* @import "./css/toolbars/default_dark_theme_darker_v2.css"; /**/
+
+/* ПОЛЬЗОВАТЕЛЬСКИЕ ПЕРЕМЕННЫЕ ПОЛОСЫ ПРОКРУТКИ (Firefox 63+ only) - EXPERIMENTAL ********************************/
+/* [!] Может не работать на каждой странице! Эта проблема должна решить Mozilla. ************************/
+/* [!] несовместимо с пользовательскими скриптами JavaScipt с полосой прокрутки userChrome ************************/
+/* [!] пользовательские значения размера, на данный момент, совместимы только с полосами прокрутки "веб-контента" ***********/
+/* [!] дополнительная информация в файле custom_scrollbar_appearance.css **********************************/
+/* @import "./config/custom_scrollbar_appearance.css"; /**/		/* <--- EXPERIMENTAL */
+
+
+/************************************************************************************************/
+/* КНОПКИ ПАНЕЛИ ИНСТРУМЕНТОВ ******************************************************************************/
+/************************************************************************************************/
+
+/* внешний вид кнопок панели инструментов и навигации - [использовать только одно] *****************************/
+/* @import "./css/buttons/buttons_on_navbar_classic_appearance.css"; /**/
+/* @import "./css/buttons/buttons_on_navbar_classic_appearance_v2.css"; /**/
+/* @import "./css/buttons/buttons_on_navbar_windows_classic_theme_appearance.css"; /**/
+/* @import "./css/buttons/buttons_on_navbar_glass_appearance.css";			/* <--- good for Dark themes */
+/* @import "./css/buttons/buttons_on_navbar_osx_appearance.css"; /* */
+
+/* кнопки панели навигации - округлость кнопкок (отредактируйте файл, чтобы установить другую округлость) *********/
+@import "./css/buttons/buttons_on_navbar_button_roundness.css"; /*
+
+/* квадратные кнопки / размер кнопкиe - [использовать только одно] *************************************/
+/* «прямоугольная форма» - нормальный размер ************************************************************/
+/* @import "./css/buttons/buttons_on_navbar_squared_buttons.css"; /**/
+/* @import "./css/buttons/buttons_on_navbar_squared_buttons_fx72.css"; /**/
+/* "нормальная форма" - большой размер (огромные 48x48px кнопки с 36x36px иконками) ************************/
+/* [!] несовместимо с опциями "пользовательский значок" ************************************************/
+/* [!] несовместимо с параметрами внешнего вида "настраиваемых кнопок вперед и назад" *******************/
+/* [!] не совместим с опцией "текстовый режим" ***************************************************/
+/* [!] частично совместим с опцией 'значки + текст', если в 'компактном режиме' *************************/
+/* @import "./css/buttons/buttons_on_navbar_huge_48px_size.css"; /**/			/* <--- EXPERIMENTAL */
+
+/* меньшее пространство кнопок в «компактном» режиме - 'Кнопки классической панели инструментов' надстройки 'маленького' режима *****/
+/* @import "./css/buttons/buttons_on_navbar_more_compact_mode.css"; /**/
+/* @import "./css/buttons/buttons_on_navbar_more_compact_mode_custom_icons_fix.css"; /**/
+
+/* внешний вид значка - [использовать только одно] (пользовательские значки не масштабируются в режимах HiDPI) ********/
+/* @import "./css/buttons/icons_colorized.css"; /**/
+/* @import "./css/buttons/icons_white_icons.css"; /**/
+/* @import "./css/buttons/icons_custom_icons.css"; /**/  /* aka "Mozilla Mix" from CTB */
+/* @import "./css/buttons/icons_custom_icons_fx1.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_fx2.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_fx3.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_fx3strata.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_fx12_colorized.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_crystal.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_firebird.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_kempelton.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_noia.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_ie6.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_seamonkey.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_old_chrome.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_old_osx.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_tango.css"; /**/
+/* @import "./css/buttons/icons_custom_icons_fx45.css"; /**/
+@import "./css/buttons/icons_custom_icons_fx45_inverted.css"; /*
+
+/* панель закладок - внешний вид кнопок - [использовать только одно] ****************************/
+/* внешний вид кнопки панели инструментов старых закладок ******************************************************/
+/* @import "./css/buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css"; /*  Windows only */
+/* @import "./css/buttons/buttons_on_bookmarks_toolbar_classic_appearance.css"; /**/
+/* @import "./css/buttons/buttons_on_bookmarks_toolbar_classic_appearance_items.css"; /**/
+
+/* кнопка меню закладок - 'кнопка и всплывающее окно' ******************************************/
+/* @import "./css/buttons/bookmarks_menu_button_localized_label_on_bookmarks_toolbar.css"; /**/
+/* @import "./css/buttons/bookmarks_menu_button_popup_showall_top_hidden.css"; /**/
+/* @import "./css/buttons/bookmarks_menu_button_popup_showall_bottom_hidden.css"; /**/
+/* @import "./css/buttons/bookmarks_menu_button_popup_sidebar_item_hidden.css"; /**/
+/* @import "./css/buttons/bookmarks_menu_button_popup_toolbar_item_hidden.css"; /**/
+/* @import "./css/buttons/bookmarks_menu_button_popup_other_item_hidden.css"; /**/
+/* всплывающее окно *****************************************************************************/
+/* @import "./css/buttons/bookmarks_menu_button_popup_classic_appearance.css"; /**/ /* Fx60-69 only */
+
+/* menubar - внешний вид кнопки панели инструментов **********************************************************/
+/* @import "./css/buttons/buttons_on_menubar_toolbar_classic_appearance.css"; /**/
+
+/* панель инструментов вкладок - внешний вид кнопки панели инструментов *****************************************************/
+/* @import "./css/buttons/buttons_on_tabs_toolbar_classic_appearance.css"; /**/			/* <--- EXPERIMENTAL */
+
+/* другие настройки кнопок ************************************************************************/
+/* @import "./css/buttons/whatnew_button_always_hidden.css"; /**/
+/* @import "./css/buttons/forward_button_hide_when_disabled.css"; /**/
+/* @import "./css/buttons/back_and_forward_separated_history_popups.css"; /**/
+/* @import "./css/buttons/back_and_forward_leftclick_history_popup_hidden.css"; /**/
+/* @import "./css/buttons/zoom_buttons_hide_reset.css"; /**/
+/* @import "./css/buttons/overflow_button_rotate_on_open.css"; /**/
+/* @import "./css/buttons/button_popup_panelarrow_hidden.css"; /**/
+/* @import "./css/buttons/button_popup_panel_mozdialog.css"; /**/
+/* @import "./css/buttons/button_popup_panel_compact.css"; /**/
+
+/* ПОЛЬЗОВАТЕЛЬСКИЕ КНОПКИ НАЗАД И ВПЕРЕД - [использовать только одно] **************************/
+/* @import "./css/buttons/custom_backforward_connected_to_location_bar.css"; /**/
+/* @import "./css/buttons/custom_backforward_connected_to_location_bar_aero.css"; /**/			/* <-- AERO colors */
+/* @import "./css/buttons/custom_backforward_connected_to_location_bar_fx70_extra.css"; /**/	/* должен быть включен для Fx 70 */
+/* @import "./css/buttons/custom_backforward_connected_to_location_bar_fx71_extra.css"; /**/	/* должен быть включен для Fx 71+ */
+/* @import "./css/buttons/custom_backforward_connected_to_location_bar_megabar_support.css"; /**/	/* должен быть включен для "мегабарной" совместимости */
+/* @import "./css/buttons/custom_backforward_connected.css"; /**/	
+/* @import "./css/buttons/custom_backforward_large_ff2.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_ff3.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_ff3_strata.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_ff3_strata_orange.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_ff3_strata_red.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_ie8.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_ie9.css"; /**/
+/* @import "./css/buttons/custom_backforward_large_kempelton.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_ff3.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_ff3_strata.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_ff3_strata_orange.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_ff3_strata_red.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_ie8.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_ie9.css"; /**/
+/* @import "./css/buttons/custom_backforward_small_kempelton.css"; /**/
+
+
+/************************************************************************************************/
+/* КНОПКА ОТКРЫТИЯ "МЕНЮ" (AKA "ГАМБУРГЕР") *****************************************************************/
+/************************************************************************************************/
+
+/* кнопка "меню" скрыта - отключите все остальные параметры кнопки при использовании этого ****/
+/* @import "./css/appbutton/appbutton_hidden.css"; /**/
+
+/* всплывающее окно кнопки "меню" ***********************************************************/
+/* @import "./css/appbutton/appbutton_popup_more_icons.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_icons_colorized.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_sync_hidden.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_logins_and_passwords_hidden.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_trackingprotection_hidden.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_panelarrow_hidden.css"; /**/ 
+
+/************************************************************************************************/
+/* кнопка "меню" на панели инструментов навигации *****************************************************************/
+/************************************************************************************************/
+
+/* @import "./css/appbutton/appbutton_on_navbar_start_position.css"; /* */
+/* @import "./css/appbutton/appbutton_on_navbar_separator_hidden.css"; /**/
+
+/* цвет кнопки - [использовать только одно] ******************************************************/
+/* @import "./css/appbutton/appbutton_on_navbar_color_autocolor.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_color_autocolor57p.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_color_orange.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_color_aurora.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_color_nightly.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_color_deved57p.css"; /* */
+/* @import "./css/appbutton/appbutton_on_navbar_color_nightly57p.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_color_palemoon.css"; /* */
+
+/* значок кнопки в виде лисы - [использовать только одно] *******************************************************/
+/* @import "./css/appbutton/appbutton_on_navbar_icon_white.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_icon_dark.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_icon_grey.css"; /**/
+/* @import "./css/appbutton/appbutton_on_navbar_icon_browser_logo.css"; /**/
+
+/* метка кнопки (показать ярлык помимо значка) *******************************************************/
+/* @import "./css/appbutton/appbutton_on_navbar_icon_and_label.css"; /* */
+
+
+/************************************************************************************************/
+/* КНОПКА "МЕНЮ" В ЗАГОЛОВКЕ FIREFOX *******************************************************************/
+/************************************************************************************************/
+
+/* кнопка "меню" в заголовке - [использовать только одно] ************************************************/
+/* -- Fx 60-73 **********************************************************************************/
+/* @import "./css/appbutton/appbutton_in_titlebar.css"; /**/ /* <-- label only */
+/* @import "./css/appbutton/appbutton_in_titlebar_icon_only.css"; /* */
+/* -- Fx 74+ (может уже быть включено на Fx 73) ******************************************************/
+/* @import "./css/appbutton/appbutton_in_titlebar_fx74.css"; /* <-- label only */
+/* @import "./css/appbutton/appbutton_in_titlebar_icon_only_fx74.css"; /* */
+
+/* замена "стрелки" в "меню" заголовка' - [использовать только одно] *****************************/
+/* @import "./css/appbutton/appbutton_in_titlebar_icon_only_dark.css"; /* */
+/* @import "./css/appbutton/appbutton_in_titlebar_icon_only_grey.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_icon_only_browser_logo.css"; /**/
+
+/* отображение "только значок" в "меню" заголовка (иконка лисы)' ********************************************************/
+/* @import "./css/appbutton/appbutton_in_titlebar_label_and_icon.css"; /* */
+
+/* macOS fix - кнопка "меню" в заголовке перемещается вправо по очевидным причинам, верно, Apple? **/
+/* @import "./css/appbutton/appbutton_in_titlebar_macOS_fix.css"; /**/
+
+/* цвет кнопки - [использовать только одно] ******************************************************/
+/* @import "./css/appbutton/appbutton_in_titlebar_autocolor.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_autocolor57p.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_transparent.css";  */
+/* @import "./css/appbutton/appbutton_in_titlebar_semi_transparent.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_aurora.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_nightly.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_deved57p.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_nightly57p.css"; /**/
+/* @import "./css/appbutton/appbutton_in_titlebar_palemoon.css"; /**/
+
+
+/************************************************************************************************/
+/* ВКЛАДКИ - ВНЕШНИЙ ВИД И ПОЛОЖЕНИЕ ***************************************************************/
+/************************************************************************************************/
+
+/* настраиваемый внешний вид вкладки - [использовать только одно] *********************************************/
+/* @import "./css/tabs/classic_squared_tabs.css";  */
+@import "./css/tabs/classic_squared_tabs_australized.css"; /*
+
+/* настраиваемые цвета вкладок устанавливаются внутри color_variables***.css файла(ов) ******************************/
+
+/* убрать закругленность верхнего угла ******************************************************************/
+/* @import "./css/tabs/classic_squared_tabs_fully_squared.css"; /**/
+
+
+/************************************************************************************************/
+/* ПОЛОЖЕНИЕ ПАНЕЛИ ИНСТРУМЕНТОВ ВКЛАДОК (под заголовком / под панелью навигации / под основным содержимым) *******/
+/************************************************************************************************/
+
+/* [использовать только одно] - Ниже строки заголовка или ниже панели навигации или ниже основного содержимого ******/
+
+/* - ВКЛАДКИ ПОД СТРОКОЙ ЗАГОЛОВКА (Fx56-like) ************************************************************/
+/* @import "./css/tabs/tabs_below_titlebar_above_navigation_toolbar.css"; /**/
+
+/* - ВКЛАДКИ ПОД НАВИГАЦИЕЙ И ЗАКЛАДКАМИ ПАНЕЛИ ИНСТРУМЕНТОВ / ВКЛАДКИ НЕ СВЕРХУ *****************************/
+/* [!] Примечание: не используйте строку заголовка ОС с кодом "вкладки не сверху" на macOS ************************/
+/* [!] Примечание: только ~ fx65_v2 работает с опцией строк с несколькими вкладками на Fx65 +. **************************/
+/* - Fx 60-64 ***********************************************************************************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar.css"; /**/ /* <-- Windows/Linux */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_macOS.css"; /**/ /* <-- macOS */
+/* - Fx 65-67 - Windows/Linux *******************************************************************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx65.css"; /**/
+/* - Fx 65-73 - macOS ***************************************************************************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_macOS.css"; /**/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_macOS_default_tabs.css"; /**/
+/* - Fx 65+ v2 - в основном для многострочных вкладок (глюки с неактивной строкой меню!) ******************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_v2.css"; /**/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_v2_force_hidden_menubar.css"; /**/ /* no menubar when OS titlebar is active */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx65_v2_macOS.css"; /**/
+/* - Fx 68-71 Windows/Linux (используйте версии Fx 65+ для macOS) *********************************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx68.css"; /**/
+/* - Fx 72-73 Windows/Linux (используйте версии Fx 65+ для macOS) *********************************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx72.css"; /**/
+/* - Fx 74+ Windows/Linux ***********************************************************************/
+/* [!] может потребоваться переопределение цвета выбора полос URL -> см. соответствующую область ***********/ 
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx74.css"; /**/
+/* - Fx 74+ - macOS *****************************************************************************/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx74_macOS.css"; /**/
+/* @import "./css/tabs/tabs_below_navigation_toolbar_fx74_macOS_default_tabs.css"; /**/
+
+/* - Вкладки под основным контентом (вкладки внизу) - EXPERIMENTAL ************************************/
+/* [!] ПОДДЕРЖКА: https://github.com/aris-t2/customcssforfx/issues/33 **********************/
+/* [!] not compatible to 'tabs toolbar - multiple tab lines' option *****************************/
+/* [!] not compatible to 'toolbars - add-on bar (simulated add-on bar)' option ******************/
+/* - Fx 60-64 ***********************************************************************************/
+/* @import "./css/tabs/tabs_below_main_content.css"; /**/
+/* - Fx 65-67 - Windows/Linux *******************************************************************/
+/* @import "./css/tabs/tabs_below_main_content_fx65.css"; /**/
+/* - Fx 65+ - macOS *****************************************************************************/
+/* @import "./css/tabs/tabs_below_main_content_fx65_macOS.css"; /**/
+/* @import "./css/tabs/tabs_below_main_content_fx65_macOS_default_tabs.css"; /**/
+/* - Fx 68-71 Windows/Linux *********************************************************************/
+/* @import "./css/tabs/tabs_below_main_content_fx68.css"; /**/
+/* - Fx 72-73 Windows/Linux *********************************************************************/
+/* @import "./css/tabs/tabs_below_main_content_fx72.css"; /**/
+/* - Fx 74+ Windows/Linux ***********************************************************************/
+/* @import "./css/tabs/tabs_below_main_content_fx74.css"; /**/
+
+/* - ПЕРЕМЕСТИТЬ ПАНЕЛЬ НАВИГАЦИИ В БОЛЕЕ ВЫСОКОЕ ПОЛОЖЕНИЕ (для вкладок не сверху) - [использовать только одно] */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_higher_navbar_positon.css"; /**/			/* <--- EXPERIMENTAL */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_higher_navbar_positon_fx65.css"; /**/			/* <--- EXPERIMENTAL */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_higher_navbar_positon_with_appbutton.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_higher_navbar_positon_with_appbutton_fx65.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_higher_navbar_positon_with_appbutton_icon_only.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/tabs/tabs_below_navigation_toolbar_higher_navbar_positon_with_appbutton_icon_only_fx65.css"; /**/  /* <--- EXPERIMENTAL */
+
+
+/* ЦВЕТА ФОНА ВКЛАДОК ПО УМОЛЧАНИЮ/АКТИВНЫЕ/ЗАВИСШИЕ/ВЫГРУЖЕННЫЕ ВКЛАДКИ И КНОПКИ "НОВАЯ ВКЛАДКА" *************/
+/* отредактируйте целевой файл, чтобы установить собственные цвета ****************************************************/
+/* @import "./config/custom_tab_color_settings.css"; /**/
+/* ТЕКСТ ВКЛАДКИ colors/shadow/weight/style for default/active/hovered/unloaded tabs *****************/
+/* отредактируйте целевой файл, чтобы установить собственные цвета ****************************************************/
+/* @import "./config/custom_tab_text_settings.css"; /**/
+
+/* MULTIROW / многорядные вкладки - [использовать только одно] ***************************************/
+/* [!] EXPERIMENTAL (любое обновление Fx может сломать эту экспериментальную функцию) ****************/
+/* [!] ПОДДЕРЖКА: https://github.com/aris-t2/customcssforfx/issues/39 **********************/
+/* [!] БАГ: перетаскивание вкладок не работает с многострочными вкладками ***********************************/
+/* [!] Оригинальные авторы: --> https://00.bulog.jp/archives/1476 **********************************/
+/* [!] --> https://www.reddit.com/r/FirefoxCSS/comments/7dclp7/multirow_tabs_in_ff57/ ***********/
+/* [!] несовместимо с опцией «Панель инструментов вкладок - ниже основного содержимого» *************************** /
+/* [!] несовместимо с опцией 'вкладки под панелью навигации' в Firefox 65+ **************** /
+/* [!] совместим только с опцией «вкладки под панелью навигации Fx 65 v2» в Firefox 65+ ******/
+/* @import "./css/tabs/tabs_multiple_lines.css"; /**/ /* Fx 60-65 */
+/* @import "./css/tabs/tabs_multiple_lines_v2.css"; /**/  /* Fx 60-65 */
+/* @import "./css/tabs/tabs_multiple_lines_fx66.css"; /**/  /* Fx 66-70 */
+/* @import "./css/tabs/tabs_multiple_lines_fx66_force_newtab_button_visibility.css"; /**/  /* Fx 66-70 */  
+/* @import "./css/tabs/tabs_multiple_lines_fx71.css"; /**/  /* Fx 71-80 */
+/* @import "./css/tabs/tabs_multiple_lines_fx71_force_newtab_button_visibility.css"; /**/  /* Fx 71-80 */
+/* @import "./css/tabs/tabs_multiple_lines_fx81.css"; /**/  /* Fx 81+ */
+/* @import "./css/tabs/tabs_multiple_lines_fx81_force_newtab_button_visibility.css"; /**/  /* Fx 81+ */
+
+/* ЗАГОЛОВОК ВКЛАДКИ В ЗАГОЛОВКЕ FIREFOX (только Windows) *************************************************/
+/* [!] некоторые внутренние страницы показывают только заголовок браузера по умолчанию **************************************/
+/* [!] может не всегда работать правильно **********************************************************/
+/* [!] Firefox 60-72 ****************************************************************************/
+/* @import "./css/tabs/tab_title_in_firefox_titlebar.css"; /**/
+/* @import "./css/tabs/tab_title_in_firefox_titlebar_fx65.css"; /**/
+/* @import "./css/tabs/tab_title_in_firefox_titlebar_centered.css"; /**/
+
+/* Положение кнопок прокрутки вкладкок - [использовать только одно] ***************************************/
+/* @import "./css/tabs/tab_scrollbuttons_both_on_toolbars_start.css"; /**/  /* Fx 60-71 */ 
+/* @import "./css/tabs/tab_scrollbuttons_both_on_toolbars_start_fx72.css"; /**/  /* Fx 72+ */
+/* @import "./css/tabs/tab_scrollbuttons_both_on_toolbars_end.css"; /**/  /* Fx 60-71 */
+/* @import "./css/tabs/tab_scrollbuttons_both_on_toolbars_end_fx72.css"; /**/  /* Fx 72+ */
+
+/* восстановить пустой / отсутствующий значок вкладки - [использовать только одно] *********************************/
+@import "./css/tabs/missing_tab_favicon_restored_default.css"; 
+/* @import "./css/tabs/missing_tab_favicon_restored_globe_v2.css"; /**/
+/* @import "./css/tabs/missing_tab_favicon_restored_sheet.css"; /**/
+/* @import "./css/tabs/missing_tab_favicon_restored_dotted.css"; /**/
+/* @import "./css/tabs/missing_tab_favicon_restored_dotted_white.css"; /**/
+/* @import "./css/tabs/missing_tab_favicon_restored_brand_logo.css"; /**/
+
+/* пользовательская анимация загрузки вкладки - [использовать только одно] **************************************/
+@import "./css/tabs/tab_throbber_blue_fx56.css"; /* */
+/* @import "./css/tabs/tab_throbber_blue.css"; /* */
+/* @import "./css/tabs/tab_throbber_grey_classic.css"; /**/
+/* @import "./css/tabs/tab_throbber_green.css"; /**/
+/* @import "./css/tabs/tab_throbber_orange_ubuntu.css"; /* */
+
+/* настройки значка закрытия вкладки - [использовать только одно] *******************************************/
+/* @import "./css/tabs/tab_close_always_visible.css";  */
+/* @import "./css/tabs/tab_close_on_active_tab_only.css"; /**/
+@import "./css/tabs/tab_close_show_on_hover_only.css"; 
+/* @import "./css/tabs/tab_close_hidden.css"; /**/
+/* @import "./css/tabs/tab_close_hidden_for_only_one_visible_tab.css"; /**/
+/* @import "./css/tabs/tab_close_at_tabs_start.css"; /**/
+/* @import "./css/tabs/tab_close_icon_size.css"; /**/
+
+/* заголовок вкладки - [использовать только одно] *********************************************************/
+/* @import "./css/tabs/tab_title_left.css"; /**/
+/* @import "./css/tabs/tab_title_centered.css"; /**/
+/* @import "./css/tabs/tab_title_right.css"; /**/
+
+/* ВКЛАДКИ ПО УМОЛЧАНИЮ - использовать, только если 'классические квадратные вкладки' отключены ******************************/
+/* @import "./css/tabs/default_tabs_tab_border.css"; /**/
+/* @import "./css/tabs/default_tabs_round_top_borders.css"; /**/
+/* @import "./css/tabs/default_tabs_tab_containers_full_line.css"; /**/
+/* фон вкладки / настройки цвета - [использовать только одно] *************************************/
+/* @import "./css/tabs/default_tabs_tab_background_appearance.css"; /**/
+/* настройки линии вкладки - [использовать только одно] *************************************************/
+/* @import "./css/tabs/default_tabs_no_tab_line.css"; /**/
+/* @import "./css/tabs/default_tabs_static_tab_line.css"; /**/
+/* @import "./css/tabs/default_tabs_tab_line_red_for_unloaded_tabs.css"; /**/
+/* @import "./css/tabs/default_tabs_tab_line_purple_in_private_mode.css"; /**/
+
+/* другие настройки вкладки ***************************************************************************/
+/* @import "./css/tabs/tab_icon_colors.css";  */
+/* @import "./css/tabs/newtab_tab_size_equals_tab_size.css"; /**/
+/* @import "./css/tabs/newtab_button_always_visible.css"; /**/
+/* @import "./css/tabs/tab_icon_inactive_tabs_lower_opacity.css"; /**/
+/* @import "./css/tabs/tab_icon_unloaded_tabs_lower_opacity.css"; /**/
+/* @import "./css/tabs/tab_maxwidth.css"; /**/
+/* @import "./css/tabs/tab_titles_remove_blur.css"; /**/
+/* @import "./css/tabs/alltabs_button_always_visible.css"; /**/  /* <--- hidden, if multiple tab row are used */
+/* @import "./css/tabs/pinnedtab_empty_favicon_hidden.css"; /**/
+/* отредактируйте целевой файл, чтобы выбрать, какие элементы скрыть ***********************************************/
+ @import "./css/tabs/tab_context_menuitems_visibility.css"; /**/
+
+
+/************************************************************************************************/
+/* ОБЩИЙ ПОЛЬЗОВАТЕЛЬСКИЙ ИНТЕРФЕЙС ***********************************************************************************/
+/************************************************************************************************/
+
+
+/* @import "./css/generalui/private_mode_indicator_hidden.css";  /**/
+/* @import "./css/generalui/bookmark_icons_colorized.css";  */
+/* @import "./css/generalui/bookmarks_smaller_more_bookmarks_icon.css"; /**/
+/* @import "./css/generalui/send_to_device_menuitems_hidden.css"; /**/
+/* @import "./css/generalui/set_as_desktop_background_menuitems_hidden.css"; /**/
+/* @import "./css/generalui/popup_animation_fade_time_reduced.css"; /**/
+/* @import "./css/generalui/popup_items_hover_appearance_aero.css"; /**/
+/* @import "./css/generalui/popup_menupopup_with_scrollbars.css"; /**/
+/* @import "./css/generalui/increase_ui_font_size.css"; /**/
+/* @import "./css/generalui/flex_space_on_navbar_replace_with_separator.css"; /**/
+/* @import "./css/generalui/statusbar_color.css"; /**/
+/* @import "./css/generalui/classic_drop_indicator.css"; /**/
+
+/* дополнительное меню - [использовать только одно] *****************************************************/
+/* @import "./css/generalui/overflow_menu_remove_text.css"; /* */
+/* @import "./css/generalui/overflow_menu_horizontal_remove_text.css";  */
+
+
+/* боковая панель ************************************************************************************* */
+/* @import "./css/generalui/sidebar_items_compact.css"; /**/
+/* @import "./css/generalui/sidebar_header_icons_colorized.css"; /**/
+/* @import "./css/generalui/sidebar_header_lwtheme.css"; /**/
+/* размеры боковой панели - [использовать только одно] ************************************************/
+/* @import "./css/generalui/sidebar_show_on_hover.css"; /**/
+/* @import "./css/generalui/sidebar_width_unrestricted.css"; /**/
+/* внешний вид боковой панели - [использовать только одно] *********************************************** */
+/* @import "./css/generalui/sidebar_appearance_grey.css"; /**/
+/* @import "./css/generalui/sidebar_appearance_grey_v2.css"; /**/
+/* @import "./css/generalui/sidebar_appearance_dark.css"; /**/
+/* @import "./css/generalui/sidebar_appearance_dark_v2.css";  */
+/* @import "./css/generalui/sidebar_appearance_lwtheme_bright.css"; /**/
+/* @import "./css/generalui/sidebar_appearance_lwtheme_dark.css"; /**/
+
+/* findbar **************************************************************************************/
+ @import "./css/generalui/findbar_on_top.css"; /**/
+/* @import "./css/generalui/findbar_show_full_quickfindbar.css"; /**/
+/* @import "./css/generalui/findbar_on_top_fade_out_on_hover.css"; /**/
+/* @import "./css/generalui/findbar_compact.css"; /**/
+/* findbar - позиция значка закрытия - [использовать только одно] *************************************/
+/* @import "./css/generalui/findbar_on_top_close_at_findbars_start.css"; /**/
+/* @import "./css/generalui/findbar_compact_on_top_close_at_findbars_start.css"; /**/
+/* @import "./css/generalui/findbar_on_bottom_close_at_findbars_start.css"; /**/
+
+/* page context menu items: 'back', 'forward', 'reload', 'stop', 'bookmarks' ********************/
+/* @import "./css/generalui/context_bfrsb_icons_colorized.css"; /**/
+/* menuitem labels - [использовать только одно] ***************************************************/
+@import "./css/generalui/context_bfrsb_labels_without_icons.css"; /**/
+/* @import "./css/generalui/context_bfrsb_labels_with_icons.css"; /**/
+/* @import "./css/generalui/context_bfrsb_labels_with_and_without_icons_Lin_macOS.css"; /**/		/* <-- Lin/macOS fix v1 */
+/* @import "./css/generalui/context_bfrsb_labels_with_and_without_icons_Lin_macOSv2.css"; /**/		/* <-- Lin/macOS fix v2 */
+
+/* значки "закрыть" для пользовательского интерфейса и вкладок - [использовать только одно] *******************************/
+/* @import "./css/generalui/close_icon_windows7.css"; /**/
+/* @import "./css/generalui/close_icon_windows7inverted.css"; /**/
+/* @import "./css/generalui/close_icon_windows7v2.css"; /**/
+/* @import "./css/generalui/close_icon_gchrome.css"; /**/
+/* @import "./css/generalui/close_icon_red.css"; /**/
+/* @import "./css/generalui/close_icon_windows10.css"; /**/
+/* @import "./css/generalui/close_icon_windows10inverted.css";  */
+/* @import "./css/generalui/close_icon_windows10red.css"; /**/
+/* @import "./css/generalui/close_icon_windows10redv2.css"; /**/
+/* @import "./css/generalui/close_icon_firefox3.css"; /**/
+
+/* ПАНЕЛЬ ПОИСКА ************************************************************************************/
+ @import "./css/generalui/searchbar_glassplus_indicator_hidden.css";
+/* @import "./css/generalui/searchbar_go_button_hidden.css"; /**/
+
+/* всплывающее окно панели поиска ******************************************************************************/
+/* @import "./css/generalui/searchbar_popup_current_engine_hidden.css"; /**/
+/* всплывающее окно панели поиска - настройки поисковой системы - [использовать только одно] **************************/
+/* @import "./css/generalui/searchbar_popup_engines_hidden.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_fx66.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_fx70.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_fx72.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_scrollbars.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_scrollbars_fx66.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_scrollbars_fx70.css"; /**/
+/* @import "./css/generalui/searchbar_popup_engines_show_labels_scrollbars_fx72.css"; /**/
+
+/* СТАРЫЙ ПОИСК (только для Firefox 60-63!) *********************************************************/	/* <--- OLD SEARCH */
+/* [!] «Старый поиск» больше не работает в Firefox 64+ из-за изменений кода Firefox ********** /
+/ * [!] Попробуйте альтернативы, представленные в ветке поддержки ******************************************/
+/* [!] 'about:config > browser.search.openintab': открыть поиск в текущей или новой вкладке *************/
+/* [!] 'about:config > browser.search.suggest.enabled': видимость поисковых предложений ***********/
+/* [!] 'about:config > browser.oldsearch.customwidth': включает настраиваемую ширину всплывающего окна ***************/
+/* [!] 'about:config > browser.oldsearch.customwidthvalue': настраиваемое значение ширины всплывающего окна ************/
+/* [!] 'about:config > browser.oldsearch.clearinput': очистить окно поиска после поиска **************/
+/* [!] 'about:config > browser.oldsearch.reverttodefault': вернуться к первому запросу после поиска **/
+/* [!] Shift + click on search glass: поиск открывается в новом окне ******************************/
+/* [!] Ctrl/Cmd + click on search glass: поиск открывается в новой вкладке ******************************/
+/* [!] ПОДДЕРЖКА: https://github.com/aris-t2/customcssforfx/issues/104 *********************/
+/* @import "./css/generalui/oldsearch.css"; /**/  /*  <--- используйте это для Fx 60-62 */
+/* @import "./css/generalui/oldsearch63.css"; /**/  /*  <--- используйте это для Fx 63 (Fx 64+ не поддерживается!) */
+
+/* Всплывающие меню закладок MENUBARS (несовместимо с macOS / Linux) *************************************/
+/* @import "./css/generalui/menubar_bookmarks_popup_bookmark_page_item_hidden.css"; /**/
+/* @import "./css/generalui/menubar_bookmarks_popup_subscribe_item_hidden.css"; /**/
+/* @import "./css/generalui/menubar_bookmarks_popup_toolbar_item_hidden.css";  */
+/* @import "./css/generalui/menubar_bookmarks_popup_other_item_hidden.css"; /**/
+
+
+/************************************************************************************************/
+/* ИНСТРУМЕНТЫ *************************************************************************************/
+/************************************************************************************************/
+
+/* ADDON BAR - имитировать дополнительную панель, переместив панель закладок вниз ********************/
+/* [!] переместите "Элементы панели инструментов закладок" на панель навигации, чтобы получить верхнюю панель инструментов с закладками *****/
+/* [!] несовместим с опцией «панель закладок - несколько строк» ​​**************************** /
+/* [!] несовместимо с опцией «панель инструментов вкладок - ниже основного содержимого» ***************************** /
+/* [!] несовместимо с опцией 'автоматическое скрытие панели закладок' ************************************/
+/* [!] ПОДДЕРЖКА: https://github.com/aris-t2/customcssforfx/issues/73 **********************/
+/* @import "./css/toolbars/addonbar_move_bookmarks_toolbar_to_bottom.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/toolbars/addonbar_move_bookmarks_toolbar_to_bottom_fx72.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/toolbars/addonbar_content_on_the_right.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/toolbars/addonbar_status_in_addonbar.css"; /**/  /* <--- EXPERIMENTAL */
+/* @import "./css/toolbars/addonbar_fullscreen_autohide.css"; /**/  /* <--- EXPERIMENTAL */
+/* [!] Fx 65+ создайте дополнительную панель инструментов для "элементов панели закладок" на панели навигации *****/
+/* @import "./css/toolbars/addonbar_extra_bookmarks_toolbar_below_navbar_fx65.css"; /**/  /* <--- EXPERIMENTAL */
+ 
+/*ОБЩИЕ НАСТРОЙКИ ПАНЕЛИ ИНСТРУМЕНТОВ*********************************************************************/
+/* @import "./css/toolbars/toolbars_old_padding.css";  */
+/* @import "./css/toolbars/tabs_toolbar_adjustments.css";  */
+/* @import "./css/toolbars/tabs_toolbar_adjustments_macOS_fix.css"; /**/					/*  <-- macOS fix */
+
+/* отредактируйте целевой файл, чтобы выбрать, какие элементы скрыть ***********************************************/
+/* @import "./css/toolbars/toolbar_context_menuitems_visibility.css";  */
+
+/* СТРОКА МЕНЮ **************************************************************************************/
+/* @import "./css/toolbars/menubar_fog_hidden.css"; /**/
+/* @import "./css/toolbars/menubar_alternative_menu_hover_color.css"; /**/
+/* @import "./css/toolbars/menubar_in_fullscreen_mode.css"; /**/
+/* @import "./css/toolbars/menubar_in_fullscreen_mode_alt_fx65_v2.css"; /**/ /*'tabs not on top v2' + Fx65+ */
+/* menubar color - ******************************************************************************/
+/* @import "./css/toolbars/menubar_color.css"; /**/
+
+/* ПАНЕЛЬ ЗАКЛАДОК ****************************************************************************/
+/* @import "./css/toolbars/bookmarks_toolbar_old_height.css";  */
+/* @import "./css/toolbars/bookmarks_toolbar_fixed_width.css"; /**/
+/* @import "./css/toolbars/bookmarks_toolbar_autohide.css"; /**/
+ @import "./css/toolbars/bookmarks_toolbar_bookmark_labels_hidden.css"; /**/
+/* @import "./css/toolbars/bookmarks_toolbar_in_fullscreen_mode.css"; /**/
+/* [!] simulate second bookmarks toolbar while "Bookmarks Toolbar Items" element is on nav-bar **/
+/* @import "./css/toolbars/bookmarks_toolbar_simulate_second_bm_toolbar.css"; /**/
+/* @import "./css/toolbars/bookmarks_toolbar_simulate_second_bm_toolbar_fx65.css"; /**/
+
+/* Панель закладок над панелью навигации - [использовать только одно] ************************/
+/* @import "./css/toolbars/bookmarks_toolbar_above_navigation_toolbar.css"; /**/
+/* @import "./css/toolbars/bookmarks_toolbar_above_navigation_toolbar_when_tab_not_top.css"; /**/
+
+/* ПАНЕЛЬ ИНСТРУМЕНТОВ ЗАКЛАДОК - НЕСКОЛЬКО СТРОК - [использовать только одно] ********************************/
+/* [!] количество видимых закладок внутренне ограничено ~ 90-110 закладками **********/
+/* [!] несовместимо с опцией «автоматическое скрытие панели закладок» *********************************** /
+/* [!] несовместимо с опцией «симулированная вторая панель закладок» **************************** /
+/* [!] несовместимо с опцией 'simulated addon-bar' *******************************************/
+/* [!] ПОДДЕРЖКА: https://github.com/aris-t2/customcssforfx/issues/99 **********************/
+/* @import "./css/toolbars/bookmarks_toolbar_multiple_lines.css"; /**/ /* <--- EXPERIMENTAL */
+/* @import "./css/toolbars/bookmarks_toolbar_multiple_lines_fx66.css"; /**/ /* <--- EXPERIMENTAL */ /*Fx66-73*/
+/* @import "./css/toolbars/bookmarks_toolbar_multiple_lines_fx74.css"; /**/ /* <--- EXPERIMENTAL */ /*Fx74+*/
+
+/* ЦВЕТА ПАНЕЛИ ИНСТРУМЕНТОВ *******************************************************************************/
+/* @import "./css/toolbars/general_toolbar_colors.css";  */
+/* @import "./css/toolbars/tab_toolbar_colors_force_menubar_color.css"; /**/
+
+/* AeroGlass панель инструментов - разделенные - для панели инструментов / WIN10 исправление для GLASS8 **********************/
+/* @import "./css/toolbars/general_toolbar_colors_navigation_toolbar_aeroglass.css"; /**/
+/* @import "./css/toolbars/general_toolbar_colors_bookmarks_toolbar_aeroglass.css"; /**/
+/* @import "./css/toolbars/general_toolbar_colors_tabs_toolbar_aeroglass.css"; /**/
+/* Windows 10 исправление для Glass8 - Glass8 требующийся для 'Windows 7'-как прозрачность окна */
+/* @import "./css/toolbars/general_toolbar_colors_aeroglass_windows10_glass8.css"; /**/  /* <--- EXPERIMENTAL */
+
+/* ТЕКСТОВЫЕ РЕЖИМЫ ПАНЕЛИ ИНСТРУМЕНТОВ - [использовать только одно] ************************************************/
+/* @import "./css/toolbars/toolbar_mode_icons_and_text.css"; /**/
+/* @import "./css/toolbars/toolbar_mode_icons_and_text_macOS.css"; /**/ /* -> also offers alternative appearance on Linux */
+/* @import "./css/toolbars/toolbar_mode_text.css"; /**/
+/* @import "./css/toolbars/toolbar_mode_text_macOS.css"; /**/ /* -> also offers alternative appearance on Linux */
+
+
+/************************************************************************************************/
+/* АДРЕСНАЯ СТРОКА / MEGABAR - Настройки для обоих 'about:config > browser.urlbar.update1' cases *****/
+/************************************************************************************************/
+
+/* @import "./css/locationbar/compact_mode_reduce_fontsize.css"; /**/
+
+/* поле идентификации / кнопка идентификации страницы **********************************************************/
+/* @import "./css/locationbar/identitybox_replace_i_icon_with_globe.css"; /**/ /* replaces search glass in Fx70+ */
+/* @import "./css/locationbar/identitybox_colors.css";  */
+/* @import "./css/locationbar/identitybox_labels_hidden.css"; /**/
+
+/* значки замков в поле идентификации / кнопка идентификации страницы - [использовать только одно] **************/
+/* @import "./css/locationbar/identitybox_padlock_icon_classic.css"; /**/
+/* @import "./css/locationbar/identitybox_padlock_icon_classic2.css"; /**/
+/* @import "./css/locationbar/identitybox_padlock_icon_modern.css"; /**/
+/* @import "./css/locationbar/identitybox_padlock_icon_modern2.css"; /**/
+/* @import "./css/locationbar/identitybox_padlock_icon_hidden.css"; /**/
+
+/* дополнительные значки / кнопки и настройки для кнопок действий сторонних страниц **********************/
+/* @import "./css/locationbar/icons_colorized.css";  */
+/* @import "./css/locationbar/reader_alternative_icon.css"; /**/
+/* @import "./css/locationbar/popup_blocked_button_hidden.css"; /**/
+/* @import "./css/locationbar/zoom_button_hidden.css"; /**/
+/* @import "./css/locationbar/go_button_in_location_bar_hidden.css"; /**/
+
+/* кнопка действия страницы (три точки) / разделитель **************************************************/
+/* @import "./css/locationbar/pageaction_separator_in_location_bar_hidden.css";  */
+/* @import "./css/locationbar/pageaction_button_in_location_bar_hidden.css"; /**/
+/* @import "./css/locationbar/pageaction_button_rotated_and_last_pageaction_button.css"; /**/
+
+/* звездочка / звездочка закладкок *****************************************************************/
+/* @import "./css/locationbar/starbutton_is_last_pageaction_button.css"; /**/
+/* @import "./css/locationbar/starbutton_popup_preview_image_hidden.css"; /**/
+/* Альтернативный значок желтой звезды - [использовать только одно] **************************************/
+/* @import "./css/locationbar/starbutton_alternative_icon.css"; /**/
+/* @import "./css/locationbar/starbutton_alternative_icon_v2.css"; /**/
+
+/* общие настройки всплывающих окон / результатов ***************************************************************/
+/* @import "./css/locationbar/ac_popup_result_font_size.css";  */
+/* @import "./css/locationbar/ac_popup_firefox_background_logo.css"; /**/
+
+/* цвет выделения / принудительный цвет выделения в темах без предопределенного цвета выделения *********/
+/* @import "./css/locationbar/selection_color_for_dark_bg.css"; /**/
+/* @import "./css/locationbar/selection_color_for_bright_bg.css"; /**/
+
+ 
+/************************************************************************************************/
+/* MEGABAR - настройки для 'megabar' & 'megabar всплывающее окно' (активен в Firefox 75+ по умолчанию) ********/
+/* about:config > browser.urlbar.update1 > true (pref присутствует в Firefox 72-76) *****************/
+/************************************************************************************************/
+
+/* @import "./css/locationbar/megabar_expanding_breakout_disabled.css";  */
+/* @import "./css/locationbar/megabar_disable_openviewonfocus.css"; /**/
+/* @import "./css/locationbar/megabar_border_roundness.css"; /**/
+/* @import "./css/locationbar/megabar_background_color_dark.css"; /**/
+
+/* порядок / внешний вид всплывающего содержимого- [использовать только одно] ************************************/
+@import "./css/locationbar/ac_popup_megabar_title_and_url_50percent_width.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_url_and_title_50percent_width.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_title_and_url_two_lines.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_url_only.css"; /**/ 
+
+/* результат настройки пункта меню/Внешний вид **********************************************************/
+@import "./css/locationbar/ac_popup_megabar_compact_results.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_searchwith_and_visit_items_hidden.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_search_engines_hidden.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_result_highlighting_aero.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_result_separator.css"; /**/
+
+
+
+
+
+/************************************************************************************************/
+/************************************************************************************************/
+/* Создайте новый файл «my_userChrome.css» и добавьте в него собственный / пользовательский код.. *************************/
+@import "./my_userChrome.css"; /**/
+/************************************************************************************************/
+/************************************************************************************************/
+/************************************************************************************************/
