@@ -1,0 +1,79 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+/* general settings */
+:root {
+  /* нестандартная высота только для классических прямоугольных вкладок */
+  --classic_squared_tabs_tab_height: 26px !important;
+  
+  /* установите значение '0px' для полностью классических прямоугольных вкладок */
+  --classic_squared_tabs-border-radius: 3px !important;
+  
+  /* установите значение '0px' для полностью квадратных вкладок */
+  --default_tab_border_roundness: 0px !important;
+ 
+  /* только для значка по умолчанию */
+  --classic_squared_tabs_tab_default_loading_icon_color: #0A84FF !important;
+  
+  /* для tab_close_icon_size.css */
+  --tab_close_icons_size: 16px !important; /* set 14x14 - 20x20px */
+  
+  /* для 'tab_maxwidth.css' - сначала разблокировать код 'минимальной ширины' внутри файла, чтобы '--tab_min_width' работал */
+  --tab_min_width: 50px !important; 
+  --tab_max_width: 120px !important;
+  
+  /* для tabs_multiple_lines.css и tabs_multiple_lines_v2.css */
+  --tab_min_width_mlt: 100px !important;
+  --tab_max_width_mlt: 200px !important;
+  
+  /* только для tabs_multiple_lines_v2.css */
+  --tabs-lines: 3 !important; 
+
+  /* для bookmarks_toolbar_multiple_lines.css /_fx66.css / _fx74.css */
+  --bookmark_items_height: 22px !important; /* <- bookmark items - line height */
+  --bookmark_items_lines: 3 !important; /* <- maximum amount of lines */
+  
+  /* для увеличения_ui_font_size.css */
+  --general_ui_font_size: 10pt !important;
+  
+  /*для searchbar_popup_engines_show_labels_scrollbars.css / ..._fx66.css*/
+  --search-one-offs_labels_height: 100px !important;
+    
+  /* для ac_popup_custom_height.css (всплывающее окно адресной строки) */
+  --ac_popup_max_height: 300px !important;
+
+  /* для addonbar_move_bookmarks_toolbar_to_bottom.css */
+  --addonbar_height: 27px !important;
+  
+  /* для custom_backforward_connected.css */
+  --color_disabled_state: #f9f9fa !important;
+  --color_default_state: #e8e8e8 !important;
+  --color_hover_state: lightblue !important;
+  --color_active_state: lightgrey !important;
+  
+  /* для ac_popup_result_font_size.css */
+  --results_font_size: var(--general_ui_font_size,10pt) !important; /* 10pt */
+}
+
+:root[uidensity="touch"] {
+  /* нестандартная высота только для классических прямоугольных вкладок */
+  --classic_squared_tabs_tab_height: 36px !important;
+}
+
+/* для ac_popup_classic_with_two_lines_fx64.css и ac_popup_classic_with_two_lines_fx68.css */
+:root {
+  --ac_popup_width: 700px !important; /* popup width in normal mode */
+  --ac_popup_number_of_results: 10 !important;  /* значение должно быть идентично about:config > browser.urlbar.maxRichResults */
+  --ac_popup_maxheight: calc(47.5px * ( var(--ac_popup_number_of_results) + 1 )) !important; /*рассчитать максимальную высоту на основе отображаемых элементов */
+  --ac_popup_height: auto !important;  /* replace auto with 'calc(47.5px * var(--ac_popup_number_of_results))' чтобы получить более короткий прокручиваемый список для высоких результирующих чисел */
+}
+
+:root[sizemode="maximized"] {
+  --ac_popup_width: 1400px !important; /* ширина всплывающего окна в развернутом режиме */
+}
+
+:root[inFullscreen="true"] {
+  --ac_popup_width: 1400px !important; /* ширина всплывающего окна в полноэкранном режиме */
+}
