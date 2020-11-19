@@ -1,0 +1,29 @@
+/* настройка цвета контекстного меню */
+#contentAreaContextMenu {
+    -moz-appearance: none !important;
+    background-color: #282a36bb !important;
+    color: rgba(255, 255, 255, 0.76) !important;
+    border: 0 !important;
+    box-shadow: unset !important;
+  }
+/* скрыть пункт меню - "назад" */
+#contentAreaContextMenu #context-back {
+    visibility: collapse !important;
+    display: none !important;
+}
+/* скрыть пункт меню - "вперед" */
+#contentAreaContextMenu #context-forward {
+    visibility: collapse !important;
+    display: none !important;
+}
+/* скрыть пункт меню - "перезагрузить" */
+#contentAreaContextMenu #context-reload {
+    visibility: collapse !important;
+    display: none !important;
+}
+/* скрыть пункт меню - "остановить" */
+#contentAreaContextMenu #context-stop {
+    visibility: collapse !important;
+    display: none !important;
+}
+
