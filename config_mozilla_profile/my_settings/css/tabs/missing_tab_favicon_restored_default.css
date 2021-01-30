@@ -1,0 +1,10 @@
+/* показывать значок для вкладок без значков */
+.tabbrowser-tab:not([pinned]) .tab-icon-image:not([src]) {
+  display: inline !important;
+}
+
+.tabbrowser-tab:not([pinned])[busy] .tab-icon-image {
+  display: none !important;
+}
+
+/**/

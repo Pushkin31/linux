@@ -1,0 +1,4 @@
+#nav-bar .toolbarbutton-icon,
+#nav-bar .toolbarbutton-badge-stack {
+  border-radius: 8px !important;
+}

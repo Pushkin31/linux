@@ -1,0 +1,130 @@
+/* видимость элемента контекстного меню вкладки **************/
+
+
+/* скрыть пункт меню "перезагрузить вкладку" */ /*
+#tabContextMenu #context_reloadTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт "выключить звук на вкладке" */ /*
+#tabContextMenu #context_toggleMuteTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть разделитель после пункта 'выключить звук на вкладке' */ /*
+#tabContextMenu #context_toggleMuteTab + menuseparator {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закрепить вкладку" */ /*
+#tabContextMenu #context_pinTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Открепить вкладку" */ /*
+#tabContextMenu #context_unpinTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Дублировать вкладку" */ /*
+#tabContextMenu #context_duplicateTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Переместить в новое окно" */ /*
+#tabContextMenu #context_openTabInWindow {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть разделитель после пункта меню "Перейти в новое окно" */ /*
+#tabContextMenu #context_sendTabToDevice_separator {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Отправить вкладку на устройство" */ /*
+#tabContextMenu #context_sendTabToDevice {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть разделитель после пункта меню "Отправить вкладку на устройство" */ /*
+#tabContextMenu #context_sendTabToDevice + menuseparator {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Обновить все вкладки"*/ /*
+#tabContextMenu #context_reloadAllTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закладки Все вкладки ..." */ /*
+#tabContextMenu #context_bookmarkAllTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закрыть вкладки справа" */ /*
+#tabContextMenu #context_closeTabsToTheEnd {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закрыть другие вкладки" */ /*
+#tabContextMenu #context_closeOtherTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть разделитель после пункта меню "Закрыть другие вкладки" */ /*
+#tabContextMenu #context_closeOtherTabs + menuseparator {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Обновить выбранную вкладку" */ /*
+#context_reloadSelectedTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Отменить закрытие вкладки" */ /*
+#tabContextMenu #context_undoCloseTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закрыть вкладку" */
+#tabContextMenu #context_closeTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Закладка" */ /*
+#tabContextMenu #context_bookmarkTab {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Выбрать все вкладки" */ /*
+#tabContextMenu #context_selectAllTabs {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/* скрыть пункт меню "Переместить вкладку" */ /*
+#tabContextMenu #context_moveTabOptions {
+  visibility: collapse !important;
+  display: none !important;
+}
+
+/**/
