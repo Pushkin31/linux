@@ -287,7 +287,8 @@
 
 /* настраиваемый внешний вид вкладки - [использовать только одно] *********************************************/
 /* @import "./css/tabs/classic_squared_tabs.css";  */
-@import "./css/tabs/classic_squared_tabs_australized.css"; /*
+/* @import "./css/tabs/classic_squared_tabs_australized.css"; /* */
+@import "./css/tabs/old_tab_style_firefox_65.css";
 
 /* настраиваемые цвета вкладок устанавливаются внутри color_variables***.css файла(ов) ******************************/
 
@@ -715,3 +716,35 @@
 /************************************************************************************************/
 /************************************************************************************************/
 /************************************************************************************************/
+
+/* покраска в чёрный */
+
+/* This root class will modify the colors of toolbar background color (by default is transparent white 
+without this change) */
+#main-window:not([lwt-toolbar-field-focus-brighttext]) {
+  --toolbar-bgcolor: rgba(0,0,0,.6) !important;
+  /* This changes the text color of all outside elements of all toolbars */
+  --lwt-text-color: #ccc !important;
+}
+
+/* Url and search bars */
+
+#nav-bar, #searchbar {
+  --lwt-toolbar-field-background-color: rgb(61,61,63) !important;
+  --lwt-toolbar-field-focus: rgb(71,71,73) !important;
+  --lwt-toolbar-field-color: #ccc !important;
+  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
+  --lwt-toolbar-field-border-color: #333 !important;
+  --toolbar-field-focus-border-color: #666 !important;
+  --urlbar-popup-url-color: rgb(90,170,230) !important;
+  --urlbar-popup-action-color: var(--urlbar-popup-url-color) !important;
+  --urlbar-separator-color: #666 !important;
+  --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
+  --autocomplete-popup-highlight-color: #ddd !important
+}
+
+/* Search panel background gradient*/
+.search-panel-one-offs-container {
+  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);
+}
+
