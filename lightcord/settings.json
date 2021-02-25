@@ -1,0 +1,17 @@
+{
+  "LAST_UPDATE_CHECK_TIMESTAMP": 1610968599081,
+  "GLASSTRON_BLUR": "blurbehind",
+  "GLASSTRON_VIBRANCY": "fullscreen-ui",
+  "BACKGROUND_COLOR": "#202225",
+  "NO_WINDOWS_BOUND": false,
+  "isTabs": false,
+  "IS_MAXIMIZED": false,
+  "IS_MINIMIZED": false,
+  "WINDOW_BOUNDS": {
+    "x": 365,
+    "y": 246,
+    "width": 1280,
+    "height": 746
+  },
+  "OPEN_ON_STARTUP": false
+}
