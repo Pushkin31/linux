@@ -1,0 +1,7 @@
+[user]
+noWindowsListIfSingle=true
+indicatorStyle=2
+indicatorOrientation=0
+indicatorColor=rgb(192,97,203)
+forceIconSize=false
+keyComboActive=true

@@ -3,47 +3,18 @@
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
-    <value type="int" value="2"/>
-    <value type="int" value="3"/>
-    <property name="panel-2" type="empty">
-      <property name="position" type="string" value="p=6;x=74;y=15"/>
-      <property name="size" type="uint" value="24"/>
-      <property name="position-locked" type="bool" value="true"/>
-      <property name="disable-struts" type="bool" value="false"/>
-      <property name="length-adjust" type="bool" value="true"/>
-      <property name="length" type="uint" value="1"/>
-      <property name="plugin-ids" type="array">
-        <value type="int" value="1"/>
-        <value type="int" value="12"/>
-        <value type="int" value="22"/>
-        <value type="int" value="3"/>
-      </property>
-      <property name="autohide-behavior" type="uint" value="1"/>
-      <property name="background-style" type="uint" value="0"/>
-      <property name="leave-opacity" type="uint" value="100"/>
-      <property name="enter-opacity" type="uint" value="100"/>
-    </property>
-    <property name="panel-3" type="empty">
-      <property name="position" type="string" value="p=2;x=1735;y=13"/>
-      <property name="size" type="uint" value="24"/>
-      <property name="plugin-ids" type="array">
-        <value type="int" value="6"/>
-      </property>
-      <property name="length" type="uint" value="1"/>
-      <property name="disable-struts" type="bool" value="false"/>
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=10;x=966;y=1057"/>
+      <property name="size" type="uint" value="43"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="autohide-behavior" type="uint" value="2"/>
-      <property name="length-adjust" type="bool" value="true"/>
       <property name="background-style" type="uint" value="0"/>
-      <property name="icon-size" type="uint" value="0"/>
-      <property name="enter-opacity" type="uint" value="100"/>
-      <property name="leave-opacity" type="uint" value="100"/>
-      <property name="background-rgba" type="array">
-        <value type="double" value="0.000000"/>
-        <value type="double" value="0.000000"/>
-        <value type="double" value="0.000000"/>
-        <value type="double" value="1.000000"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="2"/>
       </property>
+      <property name="length" type="uint" value="1"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -63,21 +34,11 @@
         <property name="reverse-menu-order" type="bool" value="false"/>
         <property name="skip-action-on-key-down" type="bool" value="true"/>
         <property name="paste-on-activate" type="uint" value="0"/>
-        <property name="max-menu-items" type="uint" value="25"/>
+        <property name="max-menu-items" type="uint" value="100"/>
         <property name="inhibit" type="bool" value="false"/>
       </property>
     </property>
-    <property name="plugin-12" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15954377371.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-22" type="string" value="showdesktop"/>
     <property name="plugin-28" type="string" value="wckbuttons"/>
-    <property name="plugin-3" type="string" value="directorymenu">
-      <property name="base-directory" type="string" value="/home/mxn"/>
-    </property>
-    <property name="plugin-6" type="string" value="wckbuttons"/>
-    <property name="plugin-1" type="string" value="whiskermenu"/>
+    <property name="plugin-2" type="string" value="docklike"/>
   </property>
 </channel>

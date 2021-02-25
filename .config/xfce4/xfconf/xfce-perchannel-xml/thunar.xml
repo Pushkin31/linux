@@ -3,9 +3,9 @@
 <channel name="thunar" version="1.0">
   <property name="last-view" type="string" value="ThunarIconView"/>
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_75_PERCENT"/>
-  <property name="last-separator-position" type="int" value="226"/>
-  <property name="last-window-width" type="int" value="1235"/>
-  <property name="last-window-height" type="int" value="687"/>
+  <property name="last-separator-position" type="int" value="189"/>
+  <property name="last-window-width" type="int" value="956"/>
+  <property name="last-window-height" type="int" value="1024"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
@@ -19,7 +19,7 @@
   <property name="misc-show-delete-action" type="bool" value="true"/>
   <property name="misc-recursive-permissions" type="string" value="THUNAR_RECURSIVE_PERMISSIONS_NEVER"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,149,50,50,618,50,50,76,50,209"/>
+  <property name="last-details-view-column-widths" type="string" value="50,149,50,50,686,50,50,76,50,136"/>
   <property name="misc-text-beside-icons" type="bool" value="false"/>
   <property name="misc-file-size-binary" type="bool" value="true"/>
   <property name="misc-folders-first" type="bool" value="true"/>

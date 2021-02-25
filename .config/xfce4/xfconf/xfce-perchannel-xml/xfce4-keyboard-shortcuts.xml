@@ -17,8 +17,18 @@
       <property name="&lt;Super&gt;p" type="empty"/>
       <property name="&lt;Primary&gt;Escape" type="empty"/>
       <property name="XF86WWW" type="empty"/>
+      <property name="HomePage" type="empty"/>
       <property name="XF86Mail" type="empty"/>
       <property name="Print" type="empty"/>
+      <property name="&lt;Alt&gt;Print" type="empty"/>
+      <property name="&lt;Shift&gt;Print" type="empty"/>
+      <property name="&lt;Super&gt;e" type="empty"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;f" type="empty"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="empty"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="empty"/>
+      <property name="&lt;Super&gt;r" type="empty">
+        <property name="startup-notify" type="empty"/>
+      </property>
     </property>
     <property name="custom" type="empty">
       <property name="&lt;Alt&gt;F3" type="string" value="xfce4-appfinder">
@@ -31,9 +41,7 @@
       <property name="XF86Mail" type="string" value="exo-open --launch MailReader"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="XF86WWW" type="string" value="exo-open --launch WebBrowser"/>
-      <property name="&lt;Alt&gt;d" type="string" value="rofi -show drun"/>
       <property name="&lt;Alt&gt;f" type="string" value="thunar"/>
-      <property name="&lt;Alt&gt;t" type="string" value="xfce4-terminal"/>
       <property name="F12" type="string" value="xfce4-terminal --drop-down"/>
       <property name="Print" type="string" value="scrot &apos;scrot_%Y-%m-%d-%S_$wx$h.png&apos; -e &apos;mv $f ~ ; viewnior ~/$f&apos;"/>
       <property name="&lt;Super&gt;Print" type="string" value="flameshot gui"/>
@@ -50,6 +58,13 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;Page_Down" type="string" value="xfce4-session-logout --halt --fast"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Page_Up" type="string" value="xfce4-session-logout --reboot --fast"/>
       <property name="ScreenSaver" type="string" value="i3lock-fancy"/>
+      <property name="&lt;Alt&gt;t" type="string" value="xfce4-terminal --hide-menubar"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;KP_Separator" type="string" value="htop"/>
+      <property name="&lt;Super&gt;KP_2" type="string" value="amixer -D pulse sset Master 5%-"/>
+      <property name="&lt;Super&gt;KP_5" type="string" value="amixer set Master toggle "/>
+      <property name="&lt;Super&gt;KP_8" type="string" value="amixer -D pulse sset Master 5%+"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="urxvt"/>
+      <property name="&lt;Alt&gt;d" type="string" value="rofi -show drun -theme style_11"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -106,6 +121,14 @@
       <property name="&lt;Primary&gt;F10" type="empty"/>
       <property name="&lt;Primary&gt;F11" type="empty"/>
       <property name="&lt;Primary&gt;F12" type="empty"/>
+      <property name="&lt;Super&gt;KP_Left" type="empty"/>
+      <property name="&lt;Super&gt;KP_Right" type="empty"/>
+      <property name="&lt;Super&gt;KP_Up" type="empty"/>
+      <property name="&lt;Super&gt;KP_Down" type="empty"/>
+      <property name="&lt;Super&gt;KP_Page_Up" type="empty"/>
+      <property name="&lt;Super&gt;KP_Home" type="empty"/>
+      <property name="&lt;Super&gt;KP_End" type="empty"/>
+      <property name="&lt;Super&gt;KP_Next" type="empty"/>
     </property>
     <property name="custom" type="empty">
       <property name="Up" type="string" value="up_key"/>

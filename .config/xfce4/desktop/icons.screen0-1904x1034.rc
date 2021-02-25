@@ -1,19 +1,27 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/mxn/Рабочий стол/акк али кулон]
-row=0
-col=3
+[/home/mxn/Рабочий стол/salary.pdf]
+row=1
+col=0
 
-[/home/mxn/Рабочий стол/акк бт адаптера]
-row=0
-col=2
+[/home/mxn/Рабочий стол/Новый каталог]
+row=11
+col=0
+
+[/home/mxn/Рабочий стол/backup]
+row=2
+col=0
+
+[/home/mxn/Рабочий стол/creio dots master .config-polybar.zip]
+row=4
+col=0
+
+[/home/mxn/Рабочий стол/distr_4.3]
+row=3
+col=0
 
 [/home/mxn/Рабочий стол/Всё]
 row=0
 col=0
-
-[/home/mxn/Рабочий стол/text]
-row=0
-col=1
 
