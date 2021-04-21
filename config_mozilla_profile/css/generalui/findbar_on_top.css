@@ -49,29 +49,28 @@
   -moz-padding-end: 18px !important;
 }
 
-/* space before findbar */
-:-moz-any(.browserContainer,#viewSource) :-moz-any(findbar,#FindToolbar):-moz-locale-dir(ltr) {
+/* пробел перед findbar */
+/* :-moz-any(.browserContainer,#viewSource) :-moz-any(findbar,#FindToolbar):-moz-locale-dir(ltr) {
   left: 5px;
 }
 :-moz-any(.browserContainer,#viewSource) :-moz-any(findbar,#FindToolbar):-moz-locale-dir(rtl) {
   right: 5px;
-}
+} */
 
-/* increase width to full window size *//*
+/* увеличить ширину до полного размера окна */
 :-moz-any(.browserContainer,#viewSource) :-moz-any(findbar,#FindToolbar) {
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
 }
  
-/**
+
 #viewSource #FindToolbar {
   background-color: -moz-dialog;
   color: -moz-dialogtext;
 }
-*/
 
-@media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8), (-moz-os-version: windows-win10) {
+/* @media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8), (-moz-os-version: windows-win10) {
   @media not all and (-moz-windows-classic) {
 	:-moz-any(.browserContainer,#viewSource) .findbar-button {
 	  -moz-appearance: toolbarbutton !important;
@@ -83,7 +82,7 @@
 	  box-shadow: unset !important;
 	}
   }
-}
+} */
 
 :-moz-any(.browserContainer, #viewSource) :-moz-any(.findbar-find-status,.found-matches) {
   -moz-margin-start: 4px !important;
@@ -108,13 +107,13 @@
   -moz-margin-start: 230px !important;
 }
 
-/* status at findbars start *//*
+ /* статус при запуске поиска */
 :-moz-any(.browserContainer, #viewSource) :-moz-any(.findbar-find-status,.found-matches) {
   -moz-box-ordinal-group: 0;
   -moz-margin-start: 0px !important;
   -moz-margin-end: 6px !important;
 }
-/**/
+
 
 :-moz-any(.browserContainer,#viewSource) :-moz-any(findbar,#FindToolbar) {
   z-index: 10000 !important;

@@ -63,7 +63,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 	gap_x = 12,
-	gap_y = 20,
+	gap_y = 10,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
@@ -89,7 +89,7 @@ conky.config = {
 
 	own_window_argb_value = 0,
 	own_window_argb_visual = true,
-	own_window_colour = '#000000',
+	own_window_colour = '000000',
 };
 
 conky.text = [[
@@ -108,25 +108,25 @@ ${voffset -10}
 ${font StyleBats:size=17}q${font} Time working:${alignr}${uptime}
 
 
-${font Arial Black:size=12}${voffset -30}GPU ${hr 2}
-${goto 5}${font Ubuntu:size=12}GPU Temp: ${alignr} ${nvidia temp} °C
-${goto 5}${font Ubuntu:size=12}Mem Used: $alignr}  ${exec nvidia-smi | grep % | cut -c 37-40} MB
+#${font Arial Black:size=12}${voffset -30}GPU ${hr 2}
+#${goto 5}${font Ubuntu:size=12}GPU Temp: ${alignr} ${nvidia temp} °C
+#${goto 5}${font Ubuntu:size=12}Mem Used: $alignr}  ${exec nvidia-smi | grep % | cut -c 37-40} MB
 #${goto 5}${font Ubuntu:size=12}Fan Speed: ${alignr} ${execi 5 nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
-${goto 5}${font Ubuntu:size=12}GPU Clock: ${alignr} ${nvidia gpufreq} MHz
-${goto 5}${font Ubuntu:size=12}Mem Clock: ${alignr} ${nvidia memfreq} MHz
-${voffset 15}
+#${goto 5}${font Ubuntu:size=12}GPU Clock: ${alignr} ${nvidia gpufreq} MHz
+#${goto 5}${font Ubuntu:size=12}Mem Clock: ${alignr} ${nvidia memfreq} MHz
+#${voffset 15}
 ${font Arial Black:size=12}${voffset -30}DISK ${hr 2}
 ${goto 5}${font Ubuntu:size=10}Used: ${fs_used /} of ${fs_size /}  | /
 ${goto 5}${font Ubuntu:size=10}Used: ${fs_used /home} of ${fs_size /home} | home
 ${goto 5}${font Ubuntu:size=10}Used: ${fs_used /mnt/windows/} of ${fs_size /mnt/windows/}  | Win
 ${voffset 3}
 ${font Arial Black:size=12}${voffset -10}NETWORK ${hr 2}
-${if_existing /proc/net/route wlp0s19f2u1}
-${voffset -18}${font PizzaDude Bullets:size=14}U${font} Down: ${downspeed wlp0s19f2u1}${alignr}${downspeedgraph wlp0s19f2u1 8,60 black black}
-${voffset 4}${font PizzaDude Bullets:size=14}O${font} Up: ${upspeed wlp0s19f2u1}${alignr}${upspeedgraph wlp0s19f2u1 8,60 black black}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} Download: ${alignr}${totaldown wlp0s19f2u1}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} Upload: ${alignr}${totalup wlp0s19f2u1} ${voffset 3}
-${voffset 4}${font Ubuntu:size=14}${if_up wlp0s19f2u1}IP : ${addr wlp0s19f2u1} ${endif}${if_up wlp0s19f2u1}
+${if_existing /proc/net/route wlp3s0u1}
+${voffset -18}${font PizzaDude Bullets:size=14}U${font} Down: ${downspeed wlp3s0u1}${alignr}${downspeedgraph wlp3s0u1 8,60 black black}
+${voffset 4}${font PizzaDude Bullets:size=14}O${font} Up: ${upspeed wlp3s0u1}${alignr}${upspeedgraph wlp3s0u1 8,60 black black}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} Download: ${alignr}${totaldown wlp3s0u1}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} Upload: ${alignr}${totalup wlp3s0u1} ${voffset 3}
+${voffset 4}${font Ubuntu:size=14}${if_up wlp3s0u1}IP : ${addr wlp3s0u1} ${endif}${if_up wlp3s0u1}
 
 
 ]];

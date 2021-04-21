@@ -1,11 +1,11 @@
 [colors]
 # background = ${xrdb:background}
 background = #000000
-foreground = #ffffff
-accent = #798BC7
+foreground = #00000071
+accent = #965dff
 text = #9baec8
 light = #d5d6d7
-suffix = #ff0404
+suffix = #ff0405
 
 [settings]
 screenchange-reload = true
@@ -56,7 +56,7 @@ font-6 = "Material Design Icons:pixelsize=8;2»
 
 modules-left = app uparch workspaces title
 modules-center = spotify spotify-prev spotify-play-pause spotify-next
-modules-right = quicklinks bri_sh tor alsa network wlan eth date xkeyboard power 
+modules-right = weather quicklinks bri_sh tor alsa power_bt wlan1 date xkeyboard power 
 
 #click-right = "jgmenu_run >/dev/null 2>&1 &"
 click-right = "sleep 0.2; xdotool key ctrl+space &"
@@ -84,16 +84,17 @@ enable-ipc = true
 type = custom/text
 content = %{A1:sleep 0.1; xdotool key ctrl+space & disown:}%{A3:rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 & disown:}%{A}%{A}
 content-foreground = ${colors.accent}   
-content-background = ${xrdb:color0}
+#content-background = ${xrdb:color0}
 content-padding = 3
-#click-left = "jgmenu_run &"
+click-left = "jgmenu_run"
 #click-left = "jgmenu_run >/dev/null 2>&1 &"
 #click-left = "sleep 0.2; xdotool key ctrl+space &"
 #click-right = "rofi -no-lazy-grab -show drun -theme launchers/style_normal_rainbow_sidebar.rasi &"
-#click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme &
- click-right = ~/.config/rofi/launchers/misc/launcher.sh
-# click-right = xfce4-popup-applicationsmenu -5 
-# click-right = ~/.bin/at.sh
+#click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -#columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme &
+#click-right = ~/.config/rofi/launchers/misc/launcher.sh
+#click-right = jgmenu
+#click-right = xfce4-popup-applicationsmenu -5 
+#click-right = ~/.bin/at.sh
 
 
 [module/cpu]
@@ -123,25 +124,6 @@ format-prefix-foreground = ${colors.accent}
 click-left = "urxvt -name term_center -e ~/.config/polybar/uparch.sh d_up &"
 click-right = "urxvt -name term_center -e pacui &"
 
-# [module/pkg]
-# type = custom/script
-# exec = updates.sh
-# exec-if = "ping -q -w 2 -c 1 192.168.43.157 > /dev/null"
-# label = %{A1:urxvt -e "yay -Syyu" & disown:} %{A3:urxvt -name "Pacui" -e "pacui" & disown:}%{F#B48EAD}%{F-} %output%%{A} %{A}
-# tail = true
-
-
-
- #[module/wtr]
- #type = custom/script
- #exec = ~/.config/polybar/wtr.sh
- #format-foreground = ${colors.text}
- #format-padding = 1
- #interval = 600
- #label-font = 5
- #click-left =
-
-
 
 [module/title]
 type = internal/xwindow
@@ -149,15 +131,6 @@ format-padding = 1
 label = "%title:0:30:...%"
 label-maxlen = 30
 
-
-[module/zentile]
-type = custom/text
-content = "  "
-content-foreground = ${colors.accent}
-content-background = ${xrdb:color0}
-click-left = "~/.config/polybar/zentile.sh &"
-click-middle =
-click-right =
 
 
 [module/workspaces]
@@ -182,7 +155,7 @@ format = <label-state>
 
 label-active = %icon%
 label-active-foreground = ${colors.accent}
-label-active-background = ${xrdb:color0}
+#label-active-background = ${xrdb:color0}
 label-active-underline = ${colors.accent}
 label-active-padding = 3
 
@@ -192,7 +165,7 @@ label-empty-foreground = ${colors.text}
 
 label-occupied = %icon%
 label-occupied-foreground = ${colors.accent}
-label-occupied-background = ${xrdb:color0}
+#label-occupied-background = ${xrdb:color0}
 label-occupied-padding = 3
 
 label-urgent = %icon%
@@ -200,45 +173,6 @@ label-urgent-foreground = ${xrdb:color5}
 label-urgent-padding = 3
 
 
-
-#[module/mpd_sh]
-#type = custom/text
-#content = 
-#content-foreground = ${colors.accent}
-#content-background = ${xrdb:color0}
-#content-padding = 3
-#click-left = "~/.config/rofi/scripts/mpd.sh &"
-
-
-
-#[module/mpd]
-#type = internal/mpd
-#interval = 2
-#format-online = <label-song>    <icon-prev>   <toggle>   <icon-next>
-#format-online-padding = 0
-#label-song =  "%artist% - %title%"
-#label-song-maxlen = 25
-#label-song-ellipsis = true
-#label-offline = " mpd off"
-#label-song-foreground = ${colors.text}
-
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-seekb =
-icon-seekf =
-icon-random =
-icon-repeat =
-icon-repeatone =
-icon-single =
-icon-consume =
-icon-play-foreground = ${colors.accent}
-icon-pause-foreground = ${colors.accent}
-icon-stop-foreground = ${colors.accent}
-icon-prev-foreground = ${colors.accent}
-icon-next-foreground = ${colors.accent}
 
 [module/spotify]
 type = custom/script
@@ -281,28 +215,6 @@ click-right = "~/.bin/bri.sh 1 1:1:1; pkill -9 redshift &"
 
 
 
-#[module/fs]
-#type = internal/fs
-#mount-0 = /home
-# mount-1 = /
-# mount-2 = /media/files
-#interval = 10
-#fixed-values = true
-#spacing = 1
-#format-mounted = <label-mounted>
-#format-mounted-prefix = 
-#format-mounted-padding = 1
-#format-mounted-prefix-foreground = ${colors.accent}
-#format-unmounted = <label-unmounted>
-#format-unmounted-prefix = 
-#format-unmounted-padding = 1
-#format-unmounted-prefix-foreground = ${colors.suffix}
-#label-mounted = " %free%"
-#label-unmounted = %mountpoint%: not mounted
-#label-unmounted-foreground = ${colors.text}
-
-
-
 [module/tor]
 type = custom/script
 exec = ~/.config/polybar/status tor
@@ -324,6 +236,15 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.accent}
+
+[module/power_bt]
+type = custom/script
+#exec = ~/.config/polybar/scripts/status_power_bt.sh
+exec = ~/.config/polybar/scripts/power_bt.sh
+interval = 10
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = ${colors.accent}
 
 
 [module/date]
@@ -359,11 +280,13 @@ format-padding = 0
 type = custom/text
 content = 
 content-foreground = ${colors.accent}
-content-background = ${xrdb:color0}
+#content-background = ${xrdb:color0}
 content-padding = 3
 #click-left = "~/.bin/power &"
 click-left= "/home/mxn/.config/rofi/powermenu/powermenu_centr.sh"
 click-right = "/home/mxn/.config/rofi/powermenu/powermenu.sh"
+
+
 
 [module/blur_picom]
 type = custom/ipc
@@ -373,50 +296,42 @@ click-left = /home/mxn/.config/polybar/blurtoggle.sh
 initial = 1
 format-foreground = ${colors.accent}
 
-[module/wlan]
+
+
+[module/wlan1]
 type = internal/network
-; interface = wlan0
 interface = wlp0s19f2u2
-interval = 3.0
-format-connected-margin = -1
-format-connected-foreground = ${colors.color4}
+interval = 1.0
 
-
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.accent}
 format-connected = <label-connected>
-label-connected = %essid%
-
-format-disconnected = <label-disconnected>
-format-disconnected-margin = 2
-format-disconnected-foreground = ${colors.color5}
-label-disconnected = %ifname% disconnected
-
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 3.0
-
-format-connected-prefix = " "
-format-connected-prefix-color1 = ${colors.color1-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-color1 = ${colors.color1-alt}
-
-[module/network]
-type = custom/text
-content = ""
-content-foreground = ${colors.accent}
-#content-background = ${xrdb:color0}
-content-padding = -1
+label-connected = %essid% 
+format-connected-foreground= ${colors.text}
 click-left = "/home/mxn/.config/rofi/applets/applets/network.sh"
 
+format-disconnected = <label-disconnected>
+label-disconnected = ent off
+label-disconnected-foreground = ${colors.text}
+
+
+
 [module/quicklinks]
-type = custom/text
-content = ""
-content-foreground = ${colors.accent}
-#content-background = ${xrdb:color0}
-#content-padding = 2
+type = custom/ipc
+hook-0 = echo 
+hook-1 = echo 
 click-left = "/home/mxn/.config/rofi/applets/menu/quicklinks.sh"
+initial = 2
+format-foreground = ${colors.accent}
+
+
+
+[module/weather]
+type = custom/script
+interval = 1800
+exec = "/home/mxn/.config/polybar/scripts/weather.sh"
+format-prefix = %{T4}%{T-}
+format-prefix-foreground = ${colors.fg-alt}
+label = %{T1}%output%%{T-}
+label-padding = 1
+

@@ -68,7 +68,7 @@
 
 /* ОБЩИЕ ПЕРЕМЕННЫЕ ****************************************************************************/
 /* [!] установите глобальные переменные для параметров размера шрифта и вкладки и многое другое внутри целевого файла ***********/
-@import "./config/general_variables.css"; /**/
+@import "./config/general_variables.css"; 
 
 /* ЦВЕТОВЫЕ ПЕРЕМЕННЫЕ ТОЛЬКО ДЛЯ ТЕМЫ БРАУЗЕРА ПО УМОЛЧАНИЮ - ГЛАВНЫЙ ИНТЕРФЕЙС - [использовать только одно] ********* */
 /* [!] установить собственные цвета для вкладок и панелей инструментов в 'color_variables.css' или используйте доступные пресеты */
@@ -145,7 +145,7 @@
 /* @import "./css/buttons/icons_custom_icons_old_osx.css"; /**/
 /* @import "./css/buttons/icons_custom_icons_tango.css"; /**/
 /* @import "./css/buttons/icons_custom_icons_fx45.css"; /**/
-@import "./css/buttons/icons_custom_icons_fx45_inverted.css"; /*
+/* @import "./css/buttons/icons_custom_icons_fx45_inverted.css"; /* */
 
 /* панель закладок - внешний вид кнопок - [использовать только одно] ****************************/
 /* внешний вид кнопки панели инструментов старых закладок ******************************************************/
@@ -288,7 +288,7 @@
 /* настраиваемый внешний вид вкладки - [использовать только одно] *********************************************/
 /* @import "./css/tabs/classic_squared_tabs.css";  */
 /* @import "./css/tabs/classic_squared_tabs_australized.css"; /* */
-@import "./css/tabs/old_tab_style_firefox_65.css";
+/* @import "./css/tabs/old_tab_style_firefox_65.css"; */
 
 /* настраиваемые цвета вкладок устанавливаются внутри color_variables***.css файла(ов) ******************************/
 
@@ -398,7 +398,7 @@
 /* @import "./css/tabs/tab_scrollbuttons_both_on_toolbars_end_fx72.css"; /**/  /* Fx 72+ */
 
 /* восстановить пустой / отсутствующий значок вкладки - [использовать только одно] *********************************/
-@import "./css/tabs/missing_tab_favicon_restored_default.css"; 
+/* @import "./css/tabs/missing_tab_favicon_restored_default.css";  */
 /* @import "./css/tabs/missing_tab_favicon_restored_globe_v2.css"; /**/
 /* @import "./css/tabs/missing_tab_favicon_restored_sheet.css"; /**/
 /* @import "./css/tabs/missing_tab_favicon_restored_dotted.css"; /**/
@@ -491,19 +491,19 @@
 /* @import "./css/generalui/sidebar_appearance_lwtheme_dark.css"; /**/
 
 /* findbar **************************************************************************************/
- @import "./css/generalui/findbar_on_top.css"; /**/
+/*@import "./css/generalui/findbar_on_top.css";  */
 /* @import "./css/generalui/findbar_show_full_quickfindbar.css"; /**/
 /* @import "./css/generalui/findbar_on_top_fade_out_on_hover.css"; /**/
 /* @import "./css/generalui/findbar_compact.css"; /**/
 /* findbar - позиция значка закрытия - [использовать только одно] *************************************/
 /* @import "./css/generalui/findbar_on_top_close_at_findbars_start.css"; /**/
 /* @import "./css/generalui/findbar_compact_on_top_close_at_findbars_start.css"; /**/
-/* @import "./css/generalui/findbar_on_bottom_close_at_findbars_start.css"; /**/
+@import "./css/generalui/findbar_on_bottom_close_at_findbars_start.css"; /*
 
 /* page context menu items: 'back', 'forward', 'reload', 'stop', 'bookmarks' ********************/
 /* @import "./css/generalui/context_bfrsb_icons_colorized.css"; /**/
 /* menuitem labels - [использовать только одно] ***************************************************/
-@import "./css/generalui/context_bfrsb_labels_without_icons.css"; /**/
+@import "./css/generalui/context_bfrsb_labels_without_icons.css"; 
 /* @import "./css/generalui/context_bfrsb_labels_with_icons.css"; /**/
 /* @import "./css/generalui/context_bfrsb_labels_with_and_without_icons_Lin_macOS.css"; /**/		/* <-- Lin/macOS fix v1 */
 /* @import "./css/generalui/context_bfrsb_labels_with_and_without_icons_Lin_macOSv2.css"; /**/		/* <-- Lin/macOS fix v2 */
@@ -597,7 +597,7 @@
 /* @import "./css/toolbars/bookmarks_toolbar_old_height.css";  */
 /* @import "./css/toolbars/bookmarks_toolbar_fixed_width.css"; /**/
 /* @import "./css/toolbars/bookmarks_toolbar_autohide.css"; /**/
- @import "./css/toolbars/bookmarks_toolbar_bookmark_labels_hidden.css"; /**/
+/* @import "./css/toolbars/bookmarks_toolbar_bookmark_labels_hidden.css";  */
 /* @import "./css/toolbars/bookmarks_toolbar_in_fullscreen_mode.css"; /**/
 /* [!] simulate second bookmarks toolbar while "Bookmarks Toolbar Items" element is on nav-bar **/
 /* @import "./css/toolbars/bookmarks_toolbar_simulate_second_bm_toolbar.css"; /**/
@@ -680,7 +680,7 @@
 /* @import "./css/locationbar/selection_color_for_dark_bg.css"; /**/
 /* @import "./css/locationbar/selection_color_for_bright_bg.css"; /**/
 
- 
+
 /************************************************************************************************/
 /* MEGABAR - настройки для 'megabar' & 'megabar всплывающее окно' (активен в Firefox 75+ по умолчанию) ********/
 /* about:config > browser.urlbar.update1 > true (pref присутствует в Firefox 72-76) *****************/
@@ -692,13 +692,13 @@
 /* @import "./css/locationbar/megabar_background_color_dark.css"; /**/
 
 /* порядок / внешний вид всплывающего содержимого- [использовать только одно] ************************************/
-@import "./css/locationbar/ac_popup_megabar_title_and_url_50percent_width.css"; /**/
+@import "./css/locationbar/ac_popup_megabar_title_and_url_50percent_width.css"; 
 /* @import "./css/locationbar/ac_popup_megabar_url_and_title_50percent_width.css"; /**/
 /* @import "./css/locationbar/ac_popup_megabar_title_and_url_two_lines.css"; /**/
 /* @import "./css/locationbar/ac_popup_megabar_url_only.css"; /**/ 
 
 /* результат настройки пункта меню/Внешний вид **********************************************************/
-@import "./css/locationbar/ac_popup_megabar_compact_results.css"; /**/
+@import "./css/locationbar/ac_popup_megabar_compact_results.css"; 
 /* @import "./css/locationbar/ac_popup_megabar_searchwith_and_visit_items_hidden.css"; /**/
 /* @import "./css/locationbar/ac_popup_megabar_search_engines_hidden.css"; /**/
 /* @import "./css/locationbar/ac_popup_megabar_result_highlighting_aero.css"; /**/
@@ -712,39 +712,8 @@
 /************************************************************************************************/
 /************************************************************************************************/
 /* Создайте новый файл «my_userChrome.css» и добавьте в него собственный / пользовательский код.. *************************/
-@import "./my_userChrome.css"; /**/
+@import "./my_userChrome.css"; 
 /************************************************************************************************/
 /************************************************************************************************/
 /************************************************************************************************/
-
-/* покраска в чёрный */
-
-/* This root class will modify the colors of toolbar background color (by default is transparent white 
-without this change) */
-#main-window:not([lwt-toolbar-field-focus-brighttext]) {
-  --toolbar-bgcolor: rgba(0,0,0,.6) !important;
-  /* This changes the text color of all outside elements of all toolbars */
-  --lwt-text-color: #ccc !important;
-}
-
-/* Url and search bars */
-
-#nav-bar, #searchbar {
-  --lwt-toolbar-field-background-color: rgb(61,61,63) !important;
-  --lwt-toolbar-field-focus: rgb(71,71,73) !important;
-  --lwt-toolbar-field-color: #ccc !important;
-  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
-  --lwt-toolbar-field-border-color: #333 !important;
-  --toolbar-field-focus-border-color: #666 !important;
-  --urlbar-popup-url-color: rgb(90,170,230) !important;
-  --urlbar-popup-action-color: var(--urlbar-popup-url-color) !important;
-  --urlbar-separator-color: #666 !important;
-  --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
-  --autocomplete-popup-highlight-color: #ddd !important
-}
-
-/* Search panel background gradient*/
-.search-panel-one-offs-container {
-  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);
-}
 

@@ -1,0 +1,51 @@
+[xfdesktop-version-4.10.3+-rcfile_format]
+4.10.3+=true
+
+[/home/mxn/Рабочий стол/chrome]
+row=3
+col=0
+
+[/home/mxn/Рабочий стол/Всё]
+row=0
+col=0
+
+[/home/mxn/Рабочий стол/adb_run]
+row=1
+col=1
+
+[/home/mxn/Рабочий стол/firefox-css-master.zip]
+row=4
+col=0
+
+[/home/mxn/Рабочий стол/string_ru.xml]
+row=7
+col=0
+
+[/home/mxn/Рабочий стол/distr_4.3]
+row=2
+col=1
+
+[/home/mxn/Рабочий стол/polybar]
+row=8
+col=0
+
+[/home/mxn/Рабочий стол/dotfiles-master-.config-polybar.zip]
+row=5
+col=0
+
+[/home/mxn/Рабочий стол/bookmarks_21.03.2021.html]
+row=1
+col=0
+
+[/home/mxn/Рабочий стол/string_eu.xml]
+row=0
+col=1
+
+[/home/mxn/Рабочий стол/dotfiles-master-.config-polybar]
+row=6
+col=0
+
+[/home/mxn/Рабочий стол/creio dots master .config-jgmenu.zip]
+row=2
+col=0
+

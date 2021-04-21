@@ -4,7 +4,7 @@
 
 
 /***********************************************************/
-/* context menu items and icons instead of just huge icons */
+/* пункты контекстного меню и значки вместо просто огромных значков */
 /***********************************************************/
 #context-sep-navigation,
 :-moz-any(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) .menu-iconic-highlightable-text {

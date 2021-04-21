@@ -3,5 +3,5 @@ Encoding=UTF-8
 Name=GitHub
 Type=Link
 URL=http://github.com
-Icon=/home/addy/.config/tint2/unleashed/.bookmarks-dot/icons/github.png
+Icon=/home/mxn/.config/tint2/unleashed/.bookmarks-dot/icons/github.png
 Exec=firefox -new-tab http://github.com

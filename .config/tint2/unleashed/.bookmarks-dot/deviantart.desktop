@@ -3,5 +3,5 @@ Encoding=UTF-8
 Name=DeviantArt
 Type=Link
 URL=http://deviantart.com
-Icon=/home/addy/.config/tint2/unleashed/.bookmarks-dot/icons/deviantart.png
+Icon=/home/mxn/.config/tint2/unleashed/.bookmarks-dot/icons/deviantart.png
 Exec=firefox -new-tab http://deviantart.com

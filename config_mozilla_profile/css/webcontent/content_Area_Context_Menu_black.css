@@ -1,11 +1,19 @@
 /* настройка цвета контекстного меню */
 #contentAreaContextMenu {
     -moz-appearance: none !important;
-    background-color: #282a36bb !important;
+    background-color: #232530 !important;
     color: rgba(255, 255, 255, 0.76) !important;
     border: 0 !important;
     box-shadow: unset !important;
-  }
+}
+/* скругление краёв меню */
+/* #contentAreaContextMenu {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;,
+} */
+
 /* скрыть пункт меню - "назад" */
 #contentAreaContextMenu #context-back {
     visibility: collapse !important;
@@ -27,3 +35,26 @@
     display: none !important;
 }
 
+/* покраска всех линий перекрытий */
+menuseparator {
+    -moz-appearance: none !important;
+    margin: 1px 0 1px 2.3em !important;
+    height: 1px !important;
+    border: none !important;
+    background: #282a36 !important;
+    padding: 0 !important
+}
+
+
+menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: rgb(255, 255, 255) !important;
+  background: rgba(61, 209, 56, 0) !important;
+}
+
+menu[_moz-menuactive="true"]:not([disabled="true"]),
+menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
+  color: #6e5892!important;
+  background: #6e5892 !important;
+  color: rgb(255, 255, 255) !important;
+}

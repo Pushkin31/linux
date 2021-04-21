@@ -3,5 +3,5 @@ Encoding=UTF-8
 Name=Google+
 Type=Link
 URL=http://plus.google.com
-Icon=/home/addy/.config/tint2/unleashed/.bookmarks-dot/icons/google+.png
+Icon=/home/mxn/.config/tint2/unleashed/.bookmarks-dot/icons/google+.png
 Exec=firefox -new-tab http://plus.google.com

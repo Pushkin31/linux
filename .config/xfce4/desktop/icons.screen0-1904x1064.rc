@@ -1,47 +1,27 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/mxn/Рабочий стол/davatorium rofi-themes master User%20Themes.zip]
-row=6
+[/home/mxn/Рабочий стол/orig]
+row=2
+col=0
+
+[/home/mxn/Рабочий стол/adb_run]
+row=0
+col=1
+
+[/home/mxn/Рабочий стол/xenlism-grub-arch-1080p.tar.xz]
+row=1
 col=0
 
 [/home/mxn/Рабочий стол/Всё]
 row=0
 col=0
 
-[/home/mxn/Рабочий стол/работающий_rofi]
-row=9
-col=0
+[/home/mxn/Рабочий стол/Google_Sans_Regular.ttf]
+row=0
+col=3
 
-[/home/mxn/Рабочий стол/creio dots master .bin.zip]
-row=5
-col=0
-
-[/home/mxn/Рабочий стол/distr_4.3]
-row=3
-col=0
-
-[/home/mxn/Рабочий стол/quicklinks.sh]
-row=10
-col=0
-
-[/home/mxn/Рабочий стол/creio dots master .config-xfwm.zip]
-row=7
-col=0
-
-[/home/mxn/Рабочий стол/salary.pdf]
-row=1
-col=0
-
-[/home/mxn/Рабочий стол/creio dots master .config-polybar.zip]
-row=4
-col=0
-
-[/home/mxn/Рабочий стол/backup]
-row=2
-col=0
-
-[/home/mxn/Рабочий стол/adi1090x rofi master 1080p.zip]
-row=8
-col=0
+[/home/mxn/Рабочий стол/ventoy.json]
+row=0
+col=2
 
