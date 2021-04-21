@@ -1,0 +1,52 @@
+{
+    "theme": {
+        "file": "/ventoy/theme/tela/theme.txt",
+        "gfxmode": "1920x1080",
+        "display_mode": "GUI",
+        "serial_param": "--unit=0 --speed=9600",
+        "ventoy_left": "5%",
+        "ventoy_top": "95%",
+        "ventoy_color": "#1a1a1a",
+        "fonts": [
+            "/ventoy/theme/tela/dejavu_sans_12.pf2",
+            "/ventoy/theme/tela/dejavu_sans_14.pf2",
+            "/ventoy/theme/tela/dejavu_sans_16.pf2",
+            "/ventoy/theme/tela/dejavu_sans_24.pf2",
+            "/ventoy/theme/tela/dejavu_32.pf2",
+            "/ventoy/theme/tela/dejavu_sans_48.pf2",
+            "/ventoy/theme/tela/terminus-12.pf2",
+            "/ventoy/theme/tela/terminus-14.pf2",
+            "/ventoy/theme/tela/terminus-16.pf2",
+            "/ventoy/theme/tela/terminus-18.pf2"
+         ]
+    },
+    
+	"persistence": [
+        {
+            "image": "/ctlos_xfce_2.0.0_20210413.iso",
+            "backend": "/persistence/persistence_ext4_256MB_vtoycow.dat"
+        }
+    ],
+    
+    "menu_alias": [
+        {
+            "image": "/ctlos_xfce_2.0.0_20210413.iso",
+            "alias": "Ctlos xfce"
+        },
+        {
+            "image": "/Win10_20H2_v2_Russian_x64.iso",
+            "alias": "Windows 10"
+        }
+    ],
+    
+    "menu_class": [
+        {
+            "key": "ctlos_xfce",
+            "class": "arch"
+        },
+        {
+            "key": "Win10",
+            "class": "windows"
+        }
+    ]   
+}
