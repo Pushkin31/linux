@@ -2,7 +2,7 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Открыть терминал здесь</name>
+	<name>Open terminal</name>
 	<unique-id>1593694320754348-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description></description>
@@ -11,7 +11,7 @@
 </action>
 <action>
 	<icon>system-file-manager</icon>
-	<name>Открыть thunar от рута</name>
+	<name>Open as root</name>
 	<unique-id>1593694320754389-2</unique-id>
 	<command>pkexec thunar %f</command>
 	<description>Open directory as root</description>
